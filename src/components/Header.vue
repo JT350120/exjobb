@@ -9,7 +9,9 @@ const count = ref(0)
 </script>
 
 <template>
-  <h1>Header</h1>
+  <header class="bg-green h-[125px] fixed t-0 w-full">
+
+  </header>
 </template>
 
 <style scoped>

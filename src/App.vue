@@ -11,7 +11,7 @@
 
 <template>
   <Header />
-  <p>Content</p>
+  <p class="bg-black md:bg-white">Content</p>
   <Footer />
   <!--<HelloWorld msg="Vite + Vue" />-->
 </template>

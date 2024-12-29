@@ -7,8 +7,30 @@ export default {
     "./src/components/*.vue",
   ],
   theme: {
+    screens: {
+      md: "768px",
+    },
+    colors: {
+      transparent: "transparent",
+      "black": "#1A1804",
+      "white": "#FCFAED",
+      "tan": "#E6DABC",
+      "green": "#94997A",
+      "yellow": "#D1BE40",
+      "btn": "#008DAB",
+      "btn-hover": "#00A9CC",
+      "btn-active": "#006E85",
+    },
+    fontSize: {
+      "sm": '0.8rem',
+      "md": '1rem',
+      "lg": '1.25rem',
+      "xl": '2rem',
+      "2xl": '3rem',
+      "3xl": '4rem',
+      "4xl": '5rem',
+    },
     extend: {},
   },
   plugins: [],
 }
-
