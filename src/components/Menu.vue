@@ -7,20 +7,20 @@
 </script>
 
 <template>
-  <nav class="md:hidden z-99 text-lg w-full flex flex-col justify-evenly px-x-standard py-y-standard bg-white">
+  <nav class="md:hidden z-999 text-lg w-full h-full top-0 absolute flex flex-col items-center justify-center px-x-standard bg-white">
+    <div class="mb-y-standard">
+      <a>Modeller</a>
+    </div>
+    <div class="mb-y-standard">
+      <a>Bygg din bil</a>
+    </div>
+    <div class="mb-y-standard">
+      <a>Återförsäljare</a>
+    </div>
     <div>
-        <a>Modeller</a>
-      </div>
-      <div>
-        <a>Bygg din bil</a>
-      </div>
-      <div>
-        <a>Återförsäljare</a>
-      </div>
-      <div>
-        <a>Vår historia</a>
-      </div>
-    </nav>
+      <a>Vår historia</a>
+    </div>
+  </nav>
 </template>
 
 <style scoped>

@@ -1,15 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+//import { reactive } from 'vue';
 
-defineProps({
-  msg: String,
-})
-
-const count = ref(0)
+/*const state = reactive({
+  menuOpen: false,
+});*/
 </script>
 
 <template>
-
+  <div class="w-full bg-yellow">
+    Hero
+  </div>
 </template>
 
 <style scoped>

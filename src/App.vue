@@ -17,12 +17,10 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
-    <div class="flex-grow bg-green">
-      <Menu v-show="store.menuOpen" class="flex-grow"/>
-    </div>
+      <Menu v-show="store.menuOpen"/>
+      <Hero class="flex-grow"/>
     <Footer />
   </div>
-  <!--<HelloWorld msg="Vite + Vue" />-->
 </template>
 
 <style scoped>
