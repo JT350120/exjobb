@@ -30,6 +30,14 @@ export default {
       "3xl": '4rem',
       "4xl": '5rem',
     },
+    padding: {
+      "x-standard": "5%",
+      "y-standard": "25px"
+    },
+    margin: {
+      "x-standard": "5%",
+      "y-standard": "25px"
+    },
     extend: {},
   },
   plugins: [],

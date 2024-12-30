@@ -7,6 +7,7 @@
   import Dealers from './components/Dealers.vue'
   import History from './components/History.vue'
   import Infobox from './components/Infobox.vue'
+  import Menu from './components/Menu.vue'
 </script>
 
 <template>
