@@ -1,18 +1,23 @@
 <script setup>
+import Menu from './Menu.vue';
 import { reactive } from 'vue';
 
-const state = reactive({
-  menuOpen: false,
-});
+import { useGlobalStore } from '../stores/global'
+
+const store = useGlobalStore();
 
 defineProps({
   msg: String,
 })
 
+function burgerAnimation() {
+
+}
+
 </script>
 
 <template>
-  <header class="header px-x-standard py-y-standard items-center bg-tan">
+  <header class="header px-x-standard py-y-standard items-center bg-tan border-black">
     <p>
       Peiriant
     </p>
@@ -34,21 +39,22 @@ defineProps({
     </nav>
 
     <!--Mobile hamburger menu-->
-    <div class="md:hidden flex flex-col">
+    <div class="md:hidden flex flex-col" @click="store.menuOpen = !store.menuOpen">
       <div class="bg-black w-[35px] h-[2px] mb-[8px]"></div>
       <div class="bg-black w-[35px] h-[2px] mb-[8px]"></div>
       <div class="bg-black w-[35px] h-[2px]"></div>
     </div>
   </header>
-
+  
 </template>
 
 <style scoped>
 header {
   width: 100%;
+  border-bottom: 2px solid;
   top: 0;
-  position: fixed;
   display: flex;
   justify-content: space-between;
+  z-index: 99;
 }
 </style>

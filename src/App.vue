@@ -8,12 +8,20 @@
   import History from './components/History.vue'
   import Infobox from './components/Infobox.vue'
   import Menu from './components/Menu.vue'
+
+  import { useGlobalStore } from './stores/global'
+
+  const store = useGlobalStore();
 </script>
 
 <template>
-  <Header />
-  <p class="bg-black md:bg-white">Content</p>
-  <Footer />
+  <div class="flex flex-col min-h-screen">
+    <Header />
+    <div class="flex-grow bg-green">
+      <Menu v-show="store.menuOpen" class="flex-grow"/>
+    </div>
+    <Footer />
+  </div>
   <!--<HelloWorld msg="Vite + Vue" />-->
 </template>
 
