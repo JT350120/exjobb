@@ -39,10 +39,10 @@ function burgerAnimation() {
     </nav>
 
     <!--Mobile hamburger menu-->
-    <div class="md:hidden flex flex-col" @click="store.menuOpen = !store.menuOpen">
-      <div class="bg-black w-[35px] h-[2px] mb-[8px]"></div>
-      <div class="bg-black w-[35px] h-[2px] mb-[8px]"></div>
-      <div class="bg-black w-[35px] h-[2px]"></div>
+    <div class="md:hidden flex flex-col w-[35px] h-[22px]" @click="store.menuOpen = !store.menuOpen">
+      <div class="bg-black w-[35px] h-[2px] mb-[8px] duration-200" :class="{ upperClose: store.menuOpen }"></div>
+      <div class="bg-black w-[35px] h-[2px] mb-[8px]" :class="{hidden: store.menuOpen }"></div>
+      <div class="bg-black w-[35px] h-[2px] duration-200" :class="{ lowerClose: store.menuOpen }"></div>
     </div>
   </header>
   
@@ -56,5 +56,18 @@ header {
   display: flex;
   justify-content: space-between;
   z-index: 99;
+}
+
+.upperClose {
+  transition: 0.2s;
+  transform: rotate(45deg);
+  position: relative;
+  top: 10px;
+}
+
+.lowerClose {
+  transition: 0.2s;
+  transform: rotate(-45deg);
+  position: relative;
 }
 </style>

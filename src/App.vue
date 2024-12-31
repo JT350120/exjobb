@@ -17,8 +17,10 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
-      <Menu v-show="store.menuOpen"/>
-      <Hero class="flex-grow"/>
+    <div class="flex-grow flex">
+      <Menu v-show="store.menuOpen" class="w-full" />
+      <Hero v-show="!store.menuOpen" class="w-full" />
+    </div>
     <Footer />
   </div>
 </template>

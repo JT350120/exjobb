@@ -7,7 +7,7 @@
 </script>
 
 <template>
-  <nav class="md:hidden z-999 text-lg w-full h-full top-0 absolute flex flex-col items-center justify-center px-x-standard bg-white">
+  <nav class="md:hidden z-999 text-lg w-full flex flex-col items-center px-x-standard bg-white">
     <div class="mb-y-standard">
       <a>Modeller</a>
     </div>
