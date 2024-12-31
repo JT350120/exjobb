@@ -51,6 +51,7 @@ function burgerAnimation() {
 <style scoped>
 header {
   width: 100%;
+  height: 80px;
   border-bottom: 2px solid;
   top: 0;
   display: flex;
