@@ -17,7 +17,7 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
-    <div class="flex-grow flex min-h-[82vh]">
+    <div class="flex-grow flex">
       <Menu v-show="globalVariables.menuOpen" class="w-full" />
       <Hero v-show="!globalVariables.menuOpen" class="w-full" />
     </div>

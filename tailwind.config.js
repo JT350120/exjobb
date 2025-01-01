@@ -38,7 +38,13 @@ export default {
       "x-standard": "5%",
       "y-standard": "25px"
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'castle1': "url('/src/assets/backgrounds/castle_bk_1.webp')",
+        'castle2': "url('/src/assets/backgrounds/castle_bk_2.webp')",
+        'shore': "url('/src/assets/backgrounds/shoreline_bk.png')",
+    },
   },
   plugins: [],
+}
 }

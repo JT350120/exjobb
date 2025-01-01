@@ -6,14 +6,6 @@ import { useGlobalStore } from '../stores/global'
 
 const store = useGlobalStore();
 
-defineProps({
-  msg: String,
-})
-
-function burgerAnimation() {
-
-}
-
 </script>
 
 <template>
