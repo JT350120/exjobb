@@ -18,8 +18,9 @@
   <div class="flex flex-col min-h-screen">
     <Header />
     <div class="flex-grow flex">
-      <Menu v-show="globalVariables.menuOpen" class="w-full" />
-      <Hero v-show="!globalVariables.menuOpen" class="w-full" />
+      <Menu v-show="globalVariables.menu" class="w-full" />
+      <Hero v-show="globalVariables.hero" class="w-full" />
+      <History v-show="globalVariables.history" class="w-full" />
     </div>
     <Footer />
   </div>
