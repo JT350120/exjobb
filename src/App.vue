@@ -11,15 +11,15 @@
 
   import { useGlobalStore } from './stores/global'
 
-  const store = useGlobalStore();
+  const globalVariables = useGlobalStore();
 </script>
 
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
     <div class="flex-grow flex min-h-[82vh]">
-      <Menu v-show="store.menuOpen" class="w-full" />
-      <Hero v-show="!store.menuOpen" class="w-full" />
+      <Menu v-show="globalVariables.menuOpen" class="w-full" />
+      <Hero v-show="!globalVariables.menuOpen" class="w-full" />
     </div>
     <Footer />
   </div>

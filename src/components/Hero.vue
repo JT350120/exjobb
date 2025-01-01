@@ -1,15 +1,13 @@
 <script setup>
-//import { reactive } from 'vue';
+import { useContentStore } from '../stores/content'
 
-/*const state = reactive({
-  menuOpen: false,
-});*/
+const content = useContentStore();
 </script>
 
 <template>
   <div class="w-full flex flex-col justify-between bg-yellow py-y-standard px-x-standard">
     <div>
-      <h1 class="text-xl md:text-2xl font-bold">Nya Peiriant 350X</h1>
+      <h1 class="text-xl md:text-2xl font-bold">Peiriant {{ content.models[0] }}</h1>
       <h2 class="text-md md:text-lg font-bold">Lorem ipsum, dolor sit</h2>
       <div class="w-full md:w-[50%] bg-black h-[2px] mt-y-standard"/>
     </div>
