@@ -16,8 +16,8 @@ defineProps({
     </div>
     <div class="flex flex-col">
       <div class="flex justify-end">
-        <a class="text-md md:text-lg font-bold mx-x-standard">Upptäck</a>
-        <a class="text-md md:text-lg font-bold">Bygg din egen</a>
+        <button class="text-md md:text-lg font-bold mx-x-standard">Upptäck</button>
+        <button class="text-md md:text-lg font-bold">Bygg din egen</button>
       </div>
     </div>
   </div>

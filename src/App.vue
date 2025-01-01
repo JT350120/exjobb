@@ -18,11 +18,12 @@
   <div class="flex flex-col min-h-screen">
     <Header />
     <div class="flex-grow flex">
-      <Menu v-show="globalVariables.menu" class="w-full" />
-      <Hero v-show="globalVariables.hero" class="w-full" />
-      <History v-show="globalVariables.history" class="w-full" />
+      <Menu v-show="globalVariables.mainRendering.menu" class="w-full" />
+      <Hero v-show="globalVariables.mainRendering.hero" class="w-full" />
+      <History v-show="globalVariables.mainRendering.history" class="w-full" />
+      <Configurator v-show="globalVariables.mainRendering.configurator" class="w-full" />
+      <Dealers v-show="globalVariables.mainRendering.dealers" class="w-full" />
     </div>
-    <Footer />
   </div>
 </template>
 

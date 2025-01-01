@@ -17,25 +17,25 @@ const globalVariables = useGlobalStore();
     <!--Desktop menu-->
     <nav class="hidden md:flex w-full justify-end">
       <div class="mr-x-standard">
-        <a>Modeller</a>
+        <button>Modeller</button>
       </div>
       <div class="mr-x-standard">
-        <a>Bygg din bil</a>
+        <button>Bygg din bil</button>
       </div>
       <div class="mr-x-standard">
-        <a>Återförsäljare</a>
+        <button>Återförsäljare</button>
       </div>
       <div>
-        <a>Vår historia</a>
+        <button>Vår historia</button>
       </div>
     </nav>
 
     <!--Mobile hamburger menu-->
-    <div class="md:hidden flex flex-col w-[35px] h-[22px]" @click="globalVariables.menu = !globalVariables.menu">
-      <div class="bg-black w-[35px] h-[2px] mb-[8px] duration-200" :class="{ upperClose: globalVariables.menu }"></div>
-      <div class="bg-black w-[35px] h-[2px] mb-[8px]" :class="{hidden: globalVariables.menu }"></div>
-      <div class="bg-black w-[35px] h-[2px] duration-200" :class="{ lowerClose: globalVariables.menu }"></div>
-    </div>
+    <button class="md:hidden flex flex-col w-[35px] h-[22px]" @click="globalVariables.mainRendering.menu = !globalVariables.mainRendering.menu">
+      <div class="bg-black w-[35px] h-[2px] mb-[8px] duration-200" :class="{ upperClose: globalVariables.mainRendering.menu }"></div>
+      <div class="bg-black w-[35px] h-[2px] mb-[8px]" :class="{hidden: globalVariables.mainRendering.menu }"></div>
+      <div class="bg-black w-[35px] h-[2px] duration-200" :class="{ lowerClose: globalVariables.mainRendering.menu }"></div>
+    </button>
   </header>
   
 </template>
