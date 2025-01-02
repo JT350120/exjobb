@@ -8,6 +8,7 @@
   import History from './components/History.vue'
   import Infobox from './components/Infobox.vue'
   import Menu from './components/Menu.vue'
+  import Models from './components/Models.vue'
 
   import { useGlobalStore } from './stores/global'
 
@@ -23,7 +24,9 @@
       <History v-show="globalVariables.mainRendering.history" class="w-full" />
       <Configurator v-show="globalVariables.mainRendering.configurator" class="w-full" />
       <Dealers v-show="globalVariables.mainRendering.dealers" class="w-full" />
+      <Models v-show="globalVariables.mainRendering.models" class="w-full" />
     </div>
+    <Footer />
   </div>
 </template>
 

@@ -17,16 +17,16 @@ const globalVariables = useGlobalStore();
     <!--Desktop menu-->
     <nav class="hidden md:flex w-full justify-end">
       <div class="mr-x-standard">
-        <button>Modeller</button>
+        <button @click="globalVariables.show('models')">Modeller</button>
       </div>
       <div class="mr-x-standard">
-        <button>Bygg din bil</button>
+        <button @click="globalVariables.show('configurator')">Bygg din bil</button>
       </div>
       <div class="mr-x-standard">
-        <button>Återförsäljare</button>
+        <button @click="globalVariables.show('dealers')">Återförsäljare</button>
       </div>
       <div>
-        <button>Vår historia</button>
+        <button @click="globalVariables.show('history')">Vår historia</button>
       </div>
     </nav>
 
