@@ -16,7 +16,7 @@ const globalVariables = useGlobalStore();
       <button>Återförsäljare</button>
     </div>
     <div>
-      <button @click="globalVariables.hideAll('history')">Vår historia</button>
+      <button @click="globalVariables.show('history')">Vår historia</button>
     </div>
   </nav>
 </template>

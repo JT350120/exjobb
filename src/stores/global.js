@@ -11,12 +11,13 @@ export const useGlobalStore = defineStore("global", {
         },
     }),
     actions: {
-        hideAll(exception) {
+
+        //Hide all components except the one chosen
+        show(component) {
             Object.keys(this.mainRendering).forEach(key => {
                 this.mainRendering[key] = false;
             });
-
-            this.mainRendering[exception] = true;
+            this.mainRendering[component] = true;
         },
     },
 });
