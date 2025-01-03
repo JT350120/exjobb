@@ -43,6 +43,7 @@ export default {
         'castle1': "url('/src/assets/backgrounds/castle_bk_1.png')",
         'castle2': "url('/src/assets/backgrounds/castle_bk_2.png')",
         'shore': "url('/src/assets/backgrounds/shoreline_bk.png')",
+        'edward': "url('/src/assets/backgrounds/shears.png')",
     },
   },
   plugins: [],

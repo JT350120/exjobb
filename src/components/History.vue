@@ -33,7 +33,7 @@ const history = content.history;
           <span class="text-md text-right italic">{{ "- " + history.quoteBy }}</span>
         </div>
       </div>
-      <div class="md:w-[50%] h-full px-x-standard py-y-standard bg-cover" :style="{ backgroundImage: `url('${history.image_bottom}')` }"></div>
+      <div class="md:w-[50%] h-full px-x-standard py-y-standard bg-cover bg-edward"></div>
     </section>
 
   </div>
