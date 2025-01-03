@@ -40,8 +40,8 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'castle1': "url('/src/assets/backgrounds/castle_bk_1.webp')",
-        'castle2': "url('/src/assets/backgrounds/castle_bk_2.webp')",
+        'castle1': "url('/src/assets/backgrounds/castle_bk_1.png')",
+        'castle2': "url('/src/assets/backgrounds/castle_bk_2.png')",
         'shore': "url('/src/assets/backgrounds/shoreline_bk.png')",
     },
   },

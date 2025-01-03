@@ -248,9 +248,9 @@ export const useContentStore = defineStore("content", {
                 heading: "En historia om ett geni",
                 quote: '"Jaha."',
                 quoteBy: "Elizabeth Ager om Edwards död 1936",
-                image_top: "../src/assets/backgrounds/shears.webp",
-                image_middle: "../src/assets/backgrounds/shears.webp",
-                image_bottom: "../src/assets/backgrounds/shears.webp",
+                image_top: "../src/assets/backgrounds/shears.png",
+                image_middle: "../src/assets/backgrounds/shears.png",
+                image_bottom: "../src/assets/backgrounds/shears.png",
                 paragraphs: [
                     "1899 konstruerade den walesiske bonden och geniet Edward David Ager världens första ångdrivna fårsax. När affärerna gick bättre behövde han ett fordon för att ta sig runt och sälja sina produkter, och den första lastbilen med namnet Peiriant byggdes 1902.",
                     "Lastbilen blev snabbt populär och företaget utökade till att sälja personbilar. Peiriant Motor Company gjorde sig snabbt ett gott rykte som prisvärda bilar med finurliga lösningar och personlighet.",
