@@ -10,7 +10,6 @@ const models = content.models;
 <template>
   <div class="flex flex-col">
     <Welcome />
-    <ModelPresentation v-for="(model, index) in models" :key="index" :data="model" />
   </div>
 </template>
 

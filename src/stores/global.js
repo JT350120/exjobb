@@ -5,6 +5,7 @@ export const useGlobalStore = defineStore("global", {
         mainRendering: {
             hero: true,
             menu: false,
+            models: false,
             history: false,
             dealers: false,
             configurator: false,
