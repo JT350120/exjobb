@@ -243,6 +243,36 @@ export const useContentStore = defineStore("content", {
             },
         ],
 
+        dealers: [
+            {
+                dealer: "Återförsäljare X",
+                street: "Handlargatan 123",
+                zip: "12345",
+                town: "Bilholm",
+                areaCode: "0999",
+                phone: "12345",
+                coordinates: [100,200],
+            },
+            {
+                dealer: "Återförsäljare Z",
+                street: "Bilvägen 100",
+                zip: "12346",
+                town: "Flarken",
+                areaCode: "0004",
+                phone: "55544",
+                coordinates: [300,110],
+            },
+            {
+                dealer: "Återförsäljare Y",
+                street: "Handlargatan 1",
+                zip: "12346",
+                town: "Bilhult",
+                areaCode: "0004",
+                phone: "55544",
+                coordinates: [300,110],
+            },
+        ],
+
         history: 
             {
                 heading: "En historia om ett geni",

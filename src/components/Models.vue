@@ -1,9 +1,10 @@
 <script setup>
+import { computed } from 'vue'
 import ModelPresentation from './ModelPresentation.vue'
 import { useContentStore } from '../stores/content'
 
 const content = useContentStore();
-const models = content.models;
+const models = computed(() => content.models);
 </script>
 
 <template>

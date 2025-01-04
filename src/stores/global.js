@@ -10,6 +10,10 @@ export const useGlobalStore = defineStore("global", {
             dealers: false,
             configurator: false,
         },
+        dealerRendering: {
+            active: null,
+            noneChosen: true,
+        }
     }),
     actions: {
 
