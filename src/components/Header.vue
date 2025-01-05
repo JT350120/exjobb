@@ -20,7 +20,7 @@ const globalVariables = useGlobalStore();
         <button @click="globalVariables.show('models')">Modeller</button>
       </div>
       <div class="mr-x-standard">
-        <button @click="globalVariables.show('configurator')">Bygg din bil</button>
+        <button @click="globalVariables.show('configurator'), globalVariables.props.model = null">Bygg din bil</button>
       </div>
       <div class="mr-x-standard">
         <button @click="globalVariables.show('dealers')">Återförsäljare</button>

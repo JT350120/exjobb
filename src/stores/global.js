@@ -13,6 +13,9 @@ export const useGlobalStore = defineStore("global", {
         dealerRendering: {
             active: null,
             noneChosen: true,
+        },
+        props: {
+            model: null,
         }
     }),
     actions: {

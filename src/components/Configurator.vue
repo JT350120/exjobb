@@ -1,15 +1,14 @@
 <script setup>
-import { ref } from 'vue'
-
 defineProps({
-  msg: String,
-})
-
-const count = ref(0)
+  model: {
+    type: String,
+    required: false,
+  },
+});
 </script>
 
 <template>
-
+  <div>{{ model }}</div>
 </template>
 
 <style scoped>

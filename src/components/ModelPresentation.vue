@@ -1,4 +1,8 @@
 <script setup>
+import { useGlobalStore } from '../stores/global'
+
+const globalVariables = useGlobalStore();
+
 defineProps({
   data: {
     type: Object,
@@ -17,7 +21,7 @@ defineProps({
     <div class="flex flex-col">
       <div class="flex justify-end">
         <button class="text-md md:text-lg font-bold mx-x-standard">Upptäck</button>
-        <button class="text-md md:text-lg font-bold">Bygg din egen</button>
+        <button class="text-md md:text-lg font-bold" @click="globalVariables.show('configurator'), globalVariables.props.model = data.model">Bygg din egen</button>
       </div>
     </div>
   </div>
