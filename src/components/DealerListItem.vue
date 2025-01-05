@@ -24,15 +24,21 @@ function isActive(ind) {
 </script>
 
 <template>
-  <div v-show="isActive(index) || globalVariables.dealerRendering.active === null"class="flex flex-col h-auto border-b-2 border-black bg-white py-y-standard px-x-standard" :class="{ active: isActive(index) }">
-    <h2 class="font-bold">{{ data.dealer }}</h2>
-    <ul class="mt-y-standard">
-      <li>{{ data.street }}</li>
-      <li class="mb-y-standard">{{ data.zip }} {{ data.town }}</li>
-      <li>{{ data.areaCode }}-{{ data.phone }}</li>
-    </ul>
-    <button v-show="isActive(index)" @click="globalVariables.dealerRendering.active = null">Stäng</button>
+  <div v-show="isActive(index) || globalVariables.dealerRendering.active === null" class="flex justify-between h-auto border-b-2 border-black bg-white py-y-standard px-x-standard"  :class="{ active: isActive(index) }">
+    <div class="flex flex-col ">
+      <h2 class="md:text-lg font-bold">{{ data.dealer }}</h2>
+      <ul class="mt-y-standard">
+        <li>{{ data.street }}</li>
+        <li class="mb-y-standard">{{ data.zip }} {{ data.town }}</li>
+        <li>{{ data.areaCode }}-{{ data.phone }}</li>
+      </ul>
+    </div>
+    <button class="w-[35px] h-[22px]" v-show="isActive(index)" @click="globalVariables.dealerRendering.active = null">
+      <div class="bg-black w-[35px] h-[2px] mb-[8px] relative top-[10px] rotate-45 duration-200"></div>
+      <div class="bg-black w-[35px] h-[2px] relative -rotate-45 duration-200"></div>
+    </button>
   </div>
+  
 </template>
 
 <style scoped>
