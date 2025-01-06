@@ -10,8 +10,9 @@ const globalVariables = useGlobalStore();
 
 <template>
   <header class="header px-x-standard py-y-standard items-center bg-tan border-black">
-    <button class="flex w-auto" @click="globalVariables.show('hero')">
+    <button @click="globalVariables.show('hero')">
       <svg
+   class="hover:scale-105 duration-200"
    width="55px"
    height="55px"
    viewBox="0 0 215.77001 215.77001"
@@ -23,25 +24,8 @@ const globalVariables = useGlobalStore();
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.38047958"
-     inkscape:cx="0"
-     inkscape:cy="48.622846"
-     inkscape:window-width="1920"
-     inkscape:window-height="974"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" /><defs
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <defs
      id="defs1" /><g
      inkscape:label="Lager 1"
      inkscape:groupmode="layer"
