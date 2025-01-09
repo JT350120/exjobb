@@ -20,8 +20,8 @@
         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:svg="http://www.w3.org/2000/svg">
-        <defs
-          id="defs1" /><g
+        <defs>
+          </defs><g
           inkscape:label="Lager 1"
           inkscape:groupmode="layer"
           id="layer1"

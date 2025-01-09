@@ -1,9 +1,11 @@
 <script setup>
 import Menu from './Menu.vue';
 import { reactive } from 'vue';
+import { useContentStore } from '../stores/content'
 
 import { useGlobalStore } from '../stores/global'
 
+const content = useContentStore();
 const globalVariables = useGlobalStore();
 
 </script>
@@ -53,7 +55,7 @@ const globalVariables = useGlobalStore();
         <button @click="globalVariables.show('models')">Modeller</button>
       </div>
       <div class="mr-x-standard">
-        <button @click="globalVariables.show('configurator'), globalVariables.props.model = null">Bygg din bil</button>
+        <button @click="globalVariables.show('configurator'), globalVariables.configuration.model = content.models[0].model">Bygg din bil</button>
       </div>
       <div class="mr-x-standard">
         <button @click="globalVariables.show('dealers')">Återförsäljare</button>

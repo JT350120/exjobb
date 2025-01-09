@@ -14,9 +14,19 @@ export const useGlobalStore = defineStore("global", {
             active: null,
             noneChosen: true,
         },
-        props: {
-            model: null,
-        }
+
+        //Loading default values for configuration
+        configuration: {
+            chosenModel: 0,
+            modelName: null,
+            price: null,
+            drivetrain: null,
+            color: null,
+            interior: null,
+            wheels: null,
+            packages: null,
+            extras: null,
+        },
     }),
     actions: {
 
