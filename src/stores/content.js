@@ -46,7 +46,7 @@ export const useContentStore = defineStore("content", {
                     ],
                     colors: [
                         {
-                            name: "Testwhite",
+                            name: "Testwhite150",
                             hex: "#ffffff",
                             price: 0,
                         },
@@ -126,7 +126,7 @@ export const useContentStore = defineStore("content", {
                     ],
                     colors: [
                         {
-                            name: "Testwhite",
+                            name: "Testwhite350",
                             hex: "#ffffff",
                             price: 0,
                         },
@@ -206,7 +206,7 @@ export const useContentStore = defineStore("content", {
                     ],
                     colors: [
                         {
-                            name: "Testwhite",
+                            name: "Testwhite580",
                             hex: "#ffffff",
                             price: 0,
                         },
