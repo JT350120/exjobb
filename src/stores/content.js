@@ -121,7 +121,7 @@ export const useContentStore = defineStore("content", {
                             transmission: "Automat",
                             mileage: 4,
                             range: 0,
-                            price: 70,
+                            price: 80,
                         },
                     ],
                     colors: [
@@ -201,7 +201,7 @@ export const useContentStore = defineStore("content", {
                             transmission: "Automat",
                             mileage: 4,
                             range: 0,
-                            price: 70,
+                            price: 90,
                         },
                     ],
                     colors: [
