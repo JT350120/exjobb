@@ -23,7 +23,6 @@ function applyDefaultConfiguration(chosen) {
   configuration.price = content.models[chosen].startingPrice;
   configuration.drivetrains = content.models[chosen].choices.drivetrains[0];
   configuration.colors = content.models[chosen].choices.colors[0];
-  configuration.interiors = content.models[chosen].choices.interiors[0];
   configuration.wheels = content.models[chosen].choices.wheels[0];
   configuration.packages = content.models[chosen].choices.packages[0];
   configuration.extras = content.models[chosen].choices.extras[0];
@@ -33,7 +32,6 @@ function summarize(chosen) {
   let sum =
   configuration.drivetrains.price +
   configuration.colors.price +
-  configuration.interiors.price +
   configuration.wheels.price +
   configuration.packages.price +
   configuration.extras.price;
@@ -58,15 +56,24 @@ function summarize(chosen) {
 
     <section v-show="!menuOpen"class="bg-yellow h-full md:min-h-[82vh] md:w-[40vw] border-t-2 md:border-t-0 md:border-l-2 border-black">
       <div class="menuItem border-b-2 h-auto border-black flex">
-        <button v-for="(carModel, index) in models" :key="index" @click="configuration.chosenModel = index, applyDefaultConfiguration(index)" :class="{ selected: configuration.chosenModel === index}" class="menuItem border-r-2 w-full border-black px-x-standard py-y-standard justify-evenly">
-          {{ content.models[index].model }}
-        </button>
+
+        <div v-show="menuOpen(showModels)">
+          <button v-for="(carModel, index) in models" :key="index" @click="configuration.chosenModel = index, applyDefaultConfiguration(index)" :class="{ selected: configuration.chosenModel === index}" class="menuItem border-r-2 w-full border-black px-x-standard py-y-standard justify-evenly">
+            {{ content.models[index].model }}
+          </button>
+        </div>
+
       </div>
-      <div v-for="(category, categoryName) in models[configuration.chosenModel].choices" :key="categoryName" class="menuItem border-b-2 h-auto border-black flex">        
+
+      <button v-for="(category, categoryName) in models[configuration.chosenModel].choices" :key="categoryName" class="menuItem border-b-2 h-auto border-black flex">        
+        
+        
         <button v-for="choice in category" @click="configuration[categoryName] = choice, configuration.price = summarize(configuration.chosenModel)" :class="{ selected: configuration[categoryName] === choice }" class="menuItem border-r-2 w-full border-black px-x-standard py-y-standard justify-evenly">
           {{ choice.name }}
         </button>
-      </div>
+
+
+      </>
     </section>
   </div>
 </template>

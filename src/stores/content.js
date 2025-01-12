@@ -51,13 +51,6 @@ export const useContentStore = defineStore("content", {
                             price: 0,
                         },
                     ],
-                    interiors: [
-                        {
-                            name: "Testblack",
-                            hex: "#000000",
-                            price: 0,
-                        },
-                    ],
                     wheels: [
                         {
                             name: "Testwheels",
@@ -128,13 +121,6 @@ export const useContentStore = defineStore("content", {
                         {
                             name: "Testwhite350",
                             hex: "#ffffff",
-                            price: 0,
-                        },
-                    ],
-                    interiors: [
-                        {
-                            name: "Testblack",
-                            hex: "#000000",
                             price: 0,
                         },
                     ],
@@ -211,13 +197,6 @@ export const useContentStore = defineStore("content", {
                             price: 0,
                         },
                     ],
-                    interiors: [
-                        {
-                            name: "Testblack",
-                            hex: "#000000",
-                            price: 0,
-                        },
-                    ],
                     wheels: [
                         {
                             name: "Testwheels",
@@ -242,6 +221,17 @@ export const useContentStore = defineStore("content", {
 
             },
         ],
+
+        configurator: {
+            choiceHeadings: {
+                model: "Modell",
+                drivetrains: "Motor & växellåda",
+                colors: "Färg",
+                wheels: "Fälgar",
+                packages: "Utrustningspaket",
+                extras: "Tillval",
+            },
+        },
 
         dealers: [
             {

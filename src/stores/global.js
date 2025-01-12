@@ -22,7 +22,6 @@ export const useGlobalStore = defineStore("global", {
             price: null,
             drivetrains: null,
             colors: null,
-            interiors: null,
             wheels: null,
             packages: null,
             extras: null,
