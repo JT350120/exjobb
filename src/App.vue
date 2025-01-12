@@ -22,7 +22,7 @@
       <Menu v-show="globalVariables.mainRendering.menu" class="w-full" />
       <Hero v-show="globalVariables.mainRendering.hero" class="w-full" />
       <History v-show="globalVariables.mainRendering.history" class="w-full" />
-      <Configurator v-show="globalVariables.mainRendering.configurator" class="w-full" />
+      <Configurator v-if="globalVariables.mainRendering.configurator" class="w-full" />
       <Dealers v-show="globalVariables.mainRendering.dealers" class="w-full" />
       <Models v-show="globalVariables.mainRendering.models" class="w-full" />
     </div>

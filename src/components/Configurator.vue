@@ -1,5 +1,5 @@
 <script setup>
-import { computed, reactive, toRaw } from 'vue'
+import { computed, onMounted, onUnmounted, toRaw } from 'vue'
 import { useContentStore } from '../stores/content'
 import { useGlobalStore } from '../stores/global'
 
@@ -9,6 +9,14 @@ const models = computed(() => content.models);
 const configuration = globalVariables.configuration;
 
 let menuOpen = false;
+
+onMounted(() => {
+  applyDefaultConfiguration(globalVariables.configuration.chosenModel);
+})
+
+onUnmounted(() => {
+  console.log("här ska konfigurationen sparas i localstorage");
+})
 
 function applyDefaultConfiguration(chosen) {
   configuration.modelName = content.models[chosen].model;
