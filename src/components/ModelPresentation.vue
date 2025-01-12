@@ -16,10 +16,10 @@ defineProps({
 </script>
 
 <template>
-  <div class="box w-full h-[70vh] flex flex-col justify-between border-t-[2px] border-black bg-yellow py-y-standard px-x-standard">
+  <div class="box w-full h-[70vh] flex flex-col justify-between border-t-[2px] border-black bg-yellow py-y-standard">
     <div>
-      <h1 class="text-xl md:text-2xl font-bold">Peiriant {{ data.model }} </h1>
-      <h2 class="text-md md:text-lg font-bold">Från {{ data.startingPrice }} kr</h2>
+      <h1 class="text-xl md:text-2xl font-bold mx-x-standard">Peiriant {{ data.model }} </h1>
+      <h2 class="text-md md:text-lg font-bold self-center mx-x-standard">Från {{ data.startingPrice }} kr</h2>
       <div class="relative left-[190px] md:left-[400px] top-[2px] mt-[-26px]">
         <svg
           width="100px"
