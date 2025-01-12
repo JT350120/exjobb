@@ -58,8 +58,8 @@ defineProps({
       <div class="w-[192.5px] md:w-[402.5px] bg-black h-[2px]"/>
     </div>
     <div class="flex flex-col">
-      <div class="flex justify-end">
-        <button class="text-md md:text-lg font-bold mx-x-standard">
+      <div class="flex justify-end mx-x-standard">
+        <button class="text-md md:text-lg font-bold mr-x-standard">
           Upptäck
         </button>
         <button class="text-md md:text-lg font-bold" @click="globalVariables.show('configurator'), globalVariables.configuration.chosenModel = indexOfModel">
