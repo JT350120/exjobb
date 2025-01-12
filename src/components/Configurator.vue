@@ -56,16 +56,12 @@ function summarize(chosen) {
 
     <section v-show="!menuOpen"class="bg-yellow h-full md:min-h-[82vh] md:w-[40vw] border-t-2 md:border-t-0 md:border-l-2 border-black">
       <div class="menuItem border-b-2 h-auto border-black flex">
-
-        <div v-show="menuOpen(showModels)">
           <button v-for="(carModel, index) in models" :key="index" @click="configuration.chosenModel = index, applyDefaultConfiguration(index)" :class="{ selected: configuration.chosenModel === index}" class="menuItem border-r-2 w-full border-black px-x-standard py-y-standard justify-evenly">
             {{ content.models[index].model }}
           </button>
-        </div>
-
       </div>
 
-      <button v-for="(category, categoryName) in models[configuration.chosenModel].choices" :key="categoryName" class="menuItem border-b-2 h-auto border-black flex">        
+      <div v-for="(category, categoryName) in models[configuration.chosenModel].choices" :key="categoryName" class="menuItem border-b-2 h-auto border-black flex">        
         
         
         <button v-for="choice in category" @click="configuration[categoryName] = choice, configuration.price = summarize(configuration.chosenModel)" :class="{ selected: configuration[categoryName] === choice }" class="menuItem border-r-2 w-full border-black px-x-standard py-y-standard justify-evenly">
@@ -73,7 +69,7 @@ function summarize(chosen) {
         </button>
 
 
-      </>
+      </div>
     </section>
   </div>
 </template>
