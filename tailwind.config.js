@@ -17,9 +17,8 @@ export default {
       "tan": "#E6DABC",
       "green": "#94997A",
       "yellow": "#D1BE40",
-      "blue": "#749AC7",
-      "blue-hover": "#86B2E6",
-      "blue-active": "#506B8A",
+      "blue": "#86B2E6",
+      "light-blue": "#95C5FF",
     },
     fontSize: {
       "sm": '0.8rem',

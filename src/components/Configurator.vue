@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, onUnmounted, toRaw } from 'vue'
+import { computed, onMounted, onUnmounted, toRaw, reactive } from 'vue'
 import { useContentStore } from '../stores/content'
 import { useGlobalStore } from '../stores/global'
 
@@ -17,6 +17,19 @@ onMounted(() => {
 onUnmounted(() => {
   console.log("här ska konfigurationen sparas i localstorage");
 })
+
+const expandedCategory = reactive({
+  name: null, 
+});
+
+function toggleCategory(categoryName) {
+  expandedCategory.name = expandedCategory.name === categoryName ? null : categoryName;
+}
+
+function checkOverflow() {
+  const hasOverflow = element.scrollHeight > element.clientHeight;
+console.log()
+}
 
 function applyDefaultConfiguration(chosen) {
   configuration.modelName = content.models[chosen].model;
@@ -50,27 +63,30 @@ function summarize(chosen) {
       </div>
     </section>
 
-    <section v-show="menuOpen" class="bg-green h-full md:min-h-[82vh] md:w-[40vw] border-t-2 md:border-t-0 md:border-l-2 border-black">
-      <div>Valmöjligheter</div>
-    </section>
-
-    <section v-show="!menuOpen"class="bg-yellow h-full md:min-h-[82vh] md:w-[40vw] border-t-2 md:border-t-0 md:border-l-2 border-black">
-      <div class="menuItem border-b-2 h-auto border-black flex">
-          <button v-for="(carModel, index) in models" :key="index" @click="configuration.chosenModel = index, applyDefaultConfiguration(index)" :class="{ selected: configuration.chosenModel === index}" class="menuItem border-r-2 w-full border-black px-x-standard py-y-standard justify-evenly">
-            {{ content.models[index].model }}
-          </button>
-      </div>
-
-      <div v-for="(category, categoryName) in models[configuration.chosenModel].choices" :key="categoryName" class="menuItem border-b-2 h-auto border-black flex">        
-        
-        
-        <button v-for="choice in category" @click="configuration[categoryName] = choice, configuration.price = summarize(configuration.chosenModel)" :class="{ selected: configuration[categoryName] === choice }" class="menuItem border-r-2 w-full border-black px-x-standard py-y-standard justify-evenly">
-          {{ choice.name }}
+    <section class="bg-white h-full md:min-h-[82vh] md:w-[40vw] border-t-2 md:border-t-0 md:border-l-2 border-black">
+      <!-- Render a button for each category -->
+      <div v-for="(category, categoryName) in models[configuration.chosenModel].choices" :key="categoryName" class="menuItem border-b-2 h-auto border-black flex flex-col">
+        <button 
+          @click="toggleCategory(categoryName)" 
+          class="flex flex-col justify-between w-full px-x-standard py-y-standard">
+          <div class="text-lg font-bold">{{ content.configurator.choiceHeadings[categoryName] }}</div>
+          <div>{{ configuration[categoryName]?.name || 'Choose' }}</div>
         </button>
 
-
+        <!-- Render choices when the category is expanded -->
+        <div v-if="expandedCategory.name === categoryName">
+          <button 
+            v-for="choice in category" 
+            :key="choice.name" 
+            @click="configuration[categoryName] = choice; configuration.price = summarize(configuration.chosenModel)" 
+            :class="{ selected: configuration[categoryName] === choice }" 
+            class="block w-full text-left px-x-standard py-y-standard border-t-2 border-black">
+            {{ choice.name }}
+          </button>
+        </div>
       </div>
     </section>
+
   </div>
 </template>
 
