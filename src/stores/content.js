@@ -50,6 +50,11 @@ export const useContentStore = defineStore("content", {
                             hex: "#ffffff",
                             price: 0,
                         },
+                        {
+                            name: "Testyellow150",
+                            hex: "#ffff00",
+                            price: 0,
+                        },
                     ],
                     wheels: [
                         {

@@ -2,14 +2,14 @@
 import { computed, onMounted, onUnmounted, reactive, ref } from 'vue';
 import { useContentStore } from '../stores/content';
 import { useGlobalStore } from '../stores/global';
-import { useSVGStore } from '../stores/svgs';
 import SVG150 from './SVG150.vue';
-
 const globalVariables = useGlobalStore();
 const content = useContentStore();
-const svgContent = useSVGStore();
 const models = computed(() => content.models);
 const configuration = globalVariables.configuration;
+
+//Do not render the car until default configuration is loaded
+let renderCar = false;
 
 onMounted(() => {
   applyDefaultConfiguration(globalVariables.configuration.chosenModel);
@@ -35,6 +35,9 @@ function applyDefaultConfiguration(chosen) {
   configuration.wheels = content.models[chosen].choices.wheels[0];
   configuration.packages = content.models[chosen].choices.packages[0];
   configuration.extras = content.models[chosen].choices.extras[0];
+
+  //render the car SVG in this function to make sure it renders after the default values are set
+  renderCar = true;
 }
 
 function summarize(chosen) {
@@ -95,7 +98,11 @@ function summarize(chosen) {
       <div class="w-[162.5px] md:w-[342.5px] bg-black h-[2px]"/>
     </div>
 
-    <SVG150 :color="'#ff00ff'" />
+    <div class="svg-container">
+      <SVG150 v-if="renderCar" :color="configuration.colors.hex" />
+    </div>
+
+    <button @click="console.log(configuration.colors.hex)">Logga konfigurationen</button>
     
   </section>
 
@@ -156,5 +163,14 @@ function summarize(chosen) {
 
 .selected {
   background-color: #86B2E6;
+}
+
+.svg-container {
+  width: 100%;
+  height: 300px;  /* You can adjust this as needed, or use 'height: 100%' to fill available space */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
