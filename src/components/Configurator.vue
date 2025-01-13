@@ -17,6 +17,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   console.log('här ska konfigurationen sparas i localstorage');
+  renderCar = false;
 });
 
 const expandedCategory = reactive({
@@ -98,7 +99,7 @@ function summarize(chosen) {
       <div class="w-[162.5px] md:w-[342.5px] bg-black h-[2px]"/>
     </div>
 
-    <div class="svg-container">
+    <div class="h-full w-full relative flex justify-center items-center py-y-standard">
       <SVG150 v-if="renderCar" :color="configuration.colors.hex" />
     </div>
 
@@ -163,14 +164,5 @@ function summarize(chosen) {
 
 .selected {
   background-color: #86B2E6;
-}
-
-.svg-container {
-  width: 100%;
-  height: 300px;  /* You can adjust this as needed, or use 'height: 100%' to fill available space */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 </style>
