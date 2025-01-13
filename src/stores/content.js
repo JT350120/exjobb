@@ -6,7 +6,7 @@ export const useContentStore = defineStore("content", {
             {
                 model: "150",
                 tagline: "Lorem ipsum, dolor sit",
-                startingPrice: 2100,
+                startingPrice: 192000,
                 explore: [
                     {
                         text: "Lorem ipsum dolor sit amet",
@@ -46,14 +46,44 @@ export const useContentStore = defineStore("content", {
                     ],
                     colors: [
                         {
-                            name: "Testwhite150",
+                            name: "Chalk solid",
                             hex: "#ffffff",
                             price: 0,
                         },
                         {
-                            name: "Testyellow150",
-                            hex: "#ffff00",
-                            price: 0,
+                            name: "Stout metallic",
+                            hex: "#1C1C14",
+                            price: 4000,
+                        },
+                        {
+                            name: "Sunset metallic",
+                            hex: "#F86400",
+                            price: 4000,
+                        },
+                        {
+                            name: "Butternut metallic",
+                            hex: "#E3AC59",
+                            price: 4000,
+                        },
+                        {
+                            name: "Oxalis metallic",
+                            hex: "#5E3A48",
+                            price: 4000,
+                        },
+                        {
+                            name: "Pear metallic",
+                            hex: "#94A322",
+                            price: 4000,
+                        },
+                        {
+                            name: "Pacific metallic",
+                            hex: "#0179B5",
+                            price: 4000,
+                        },
+                        {
+                            name: "Strawberry metallic",
+                            hex: "#DA0000",
+                            price: 4000,
                         },
                     ],
                     wheels: [
