@@ -1,34 +1,30 @@
 <script setup>
-import { computed, onMounted, onUnmounted, toRaw, reactive } from 'vue'
-import { useContentStore } from '../stores/content'
-import { useGlobalStore } from '../stores/global'
+import { computed, onMounted, onUnmounted, reactive, ref } from 'vue';
+import { useContentStore } from '../stores/content';
+import { useGlobalStore } from '../stores/global';
+import { useSVGStore } from '../stores/svgs';
+import SVG150 from './SVG150.vue';
 
 const globalVariables = useGlobalStore();
 const content = useContentStore();
+const svgContent = useSVGStore();
 const models = computed(() => content.models);
 const configuration = globalVariables.configuration;
 
-let menuOpen = false;
-
 onMounted(() => {
   applyDefaultConfiguration(globalVariables.configuration.chosenModel);
-})
+});
 
 onUnmounted(() => {
-  console.log("här ska konfigurationen sparas i localstorage");
-})
+  console.log('här ska konfigurationen sparas i localstorage');
+});
 
 const expandedCategory = reactive({
-  name: null, 
+  name: null,
 });
 
 function toggleCategory(categoryName) {
   expandedCategory.name = expandedCategory.name === categoryName ? null : categoryName;
-}
-
-function checkOverflow() {
-  const hasOverflow = element.scrollHeight > element.clientHeight;
-console.log()
 }
 
 function applyDefaultConfiguration(chosen) {
@@ -42,12 +38,12 @@ function applyDefaultConfiguration(chosen) {
 }
 
 function summarize(chosen) {
-  let sum =
-  configuration.drivetrains.price +
-  configuration.colors.price +
-  configuration.wheels.price +
-  configuration.packages.price +
-  configuration.extras.price;
+  const sum =
+    configuration.drivetrains.price +
+    configuration.colors.price +
+    configuration.wheels.price +
+    configuration.packages.price +
+    configuration.extras.price;
 
   return sum + content.models[chosen].startingPrice;
 }
@@ -98,7 +94,10 @@ function summarize(chosen) {
         </div>
       <div class="w-[162.5px] md:w-[342.5px] bg-black h-[2px]"/>
     </div>
-    </section>
+
+    <SVG150 :color="'#ff00ff'" />
+    
+  </section>
 
     <section class="bg-white h-full md:h-[82vh] overflow-scroll md:w-[40vw] border-t-2 md:border-t-0 md:border-l-2 border-black">
       <!-- Render a button for car models -->
