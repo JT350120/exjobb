@@ -53,57 +53,71 @@ export const useContentStore = defineStore("content", {
                         {
                             name: "Stout metallic",
                             hex: "#1C1C14",
-                            price: 4000,
+                            price: 5000,
                         },
                         {
                             name: "Sunset metallic",
                             hex: "#F86400",
-                            price: 4000,
+                            price: 5000,
                         },
                         {
                             name: "Butternut metallic",
                             hex: "#E3AC59",
-                            price: 4000,
+                            price: 5000,
                         },
                         {
                             name: "Oxalis metallic",
                             hex: "#5E3A48",
-                            price: 4000,
+                            price: 5000,
                         },
                         {
                             name: "Pear metallic",
                             hex: "#94A322",
-                            price: 4000,
+                            price: 5000,
                         },
                         {
                             name: "Pacific metallic",
                             hex: "#0179B5",
-                            price: 4000,
+                            price: 5000,
                         },
                         {
                             name: "Strawberry metallic",
                             hex: "#DA0000",
-                            price: 4000,
+                            price: 5000,
                         },
                     ],
                     wheels: [
                         {
-                            name: "Testwheels",
+                            name: "Standard",
                             file: "src",
                             price: 0,
                         },
-                    ],
-                    packages: [
                         {
-                            name: "Utrustningspaket",
-                            price: 0,
+                            name: "Posh",
+                            file: "src",
+                            price: 3700,
                         },
                     ],
                     extras: [
                         {
-                            name: "Gadget",
+                            name: "Kylarprydnad",
                             file: "src",
-                            price: 0,
+                            price: 2700,
+                        },
+                        {
+                            name: "Extraljus",
+                            file: "src",
+                            price: 3000,
+                        },
+                        {
+                            name: "Rallyvinge",
+                            file: "src",
+                            price: 3000,
+                        },
+                        {
+                            name: "Takmonterad koffert",
+                            file: "src",
+                            price: 3200,
                         },
                     ],
                 }

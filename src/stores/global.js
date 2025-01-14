@@ -23,8 +23,7 @@ export const useGlobalStore = defineStore("global", {
             drivetrains: null,
             colors: null,
             wheels: null,
-            packages: null,
-            extras: null,
+            extras: [],
         },
     }),
     actions: {

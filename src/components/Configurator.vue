@@ -34,22 +34,37 @@ function applyDefaultConfiguration(chosen) {
   configuration.drivetrains = content.models[chosen].choices.drivetrains[0];
   configuration.colors = content.models[chosen].choices.colors[0];
   configuration.wheels = content.models[chosen].choices.wheels[0];
-  configuration.packages = content.models[chosen].choices.packages[0];
-  configuration.extras = content.models[chosen].choices.extras[0];
 
   //render the car SVG in this function to make sure it renders after the default values are set
   renderCar = true;
 }
 
 function summarize(chosen) {
-  const sum =
+
+  const extrasSum = configuration.extras.reduce((sum, extra) => sum + extra.price, 0);
+
+  const totalSum =
     configuration.drivetrains.price +
     configuration.colors.price +
-    configuration.wheels.price +
-    configuration.packages.price +
-    configuration.extras.price;
+    configuration.wheels.price + 
+    extrasSum
 
-  return sum + content.models[chosen].startingPrice;
+  return totalSum + content.models[chosen].startingPrice;
+}
+
+function handleChoiceClick(choice, categoryName) {
+  if (categoryName === 'extras') {
+    // If the category is 'extras', toggle the choice in the extras array
+    const index = configuration.extras.findIndex(extra => extra.name === choice.name);
+    if (index === -1) {
+      configuration.extras.push(choice); // Add to extras if not already selected
+    } else {
+      configuration.extras.splice(index, 1); // Remove from extras if already selected
+    }
+  } else {
+    configuration[categoryName] = choice;
+  }
+  configuration.price = summarize(configuration.chosenModel);
 }
 </script>
 
@@ -103,7 +118,7 @@ function summarize(chosen) {
       <SVG150 v-if="renderCar" :color="configuration.colors.hex" />
     </div>
 
-    <button @click="console.log(configuration.colors.hex)">Logga konfigurationen</button>
+    <button @click="console.log(configuration)">Logga konfigurationen</button>
     
   </section>
 
@@ -136,7 +151,9 @@ function summarize(chosen) {
           @click="toggleCategory(categoryName)" 
           class="flex flex-col justify-between w-full px-x-standard py-y-standard">
           <div class="text-lg font-bold">{{ content.configurator.choiceHeadings[categoryName] }}</div>
-          <div>{{ configuration[categoryName]?.name || 'Choose' }}</div>
+          <div v-if="configuration[categoryName]?.name">{{ configuration[categoryName].name }}</div>
+          <div v-if="configuration[categoryName]?.length === 0 || configuration[categoryName]?.length === null">Inga valda</div>
+          <div v-if="configuration[categoryName]?.length > 0 || configuration[categoryName]?.length === null">{{ configuration[categoryName]?.length }} valda</div>
         </button>
 
         <!-- Render choices when the category is expanded -->
@@ -144,12 +161,13 @@ function summarize(chosen) {
           <button 
             v-for="choice in category" 
             :key="choice.name" 
-            @click="configuration[categoryName] = choice; configuration.price = summarize(configuration.chosenModel)" 
-            :class="{ selected: configuration[categoryName] === choice }" 
+            @click="handleChoiceClick(choice, categoryName)" 
+            :class="{ selected: categoryName === 'extras' ? configuration.extras.includes(choice) : configuration[categoryName] === choice }" 
             class="block w-full text-left px-x-standard py-y-standard border-t-2 border-black">
             {{ choice.name }}
           </button>
         </div>
+
       </div>
     </section>
 
