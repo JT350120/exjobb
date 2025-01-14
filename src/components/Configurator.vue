@@ -28,6 +28,7 @@ function toggleCategory(categoryName) {
   expandedCategory.name = expandedCategory.name === categoryName ? null : categoryName;
 }
 
+//Apply the first choice in every category as default, except configuration.extras since all extras are optional
 function applyDefaultConfiguration(chosen) {
   configuration.modelName = content.models[chosen].model;
   configuration.price = content.models[chosen].startingPrice;
@@ -35,7 +36,7 @@ function applyDefaultConfiguration(chosen) {
   configuration.colors = content.models[chosen].choices.colors[0];
   configuration.wheels = content.models[chosen].choices.wheels[0];
 
-  //render the car SVG in this function to make sure it renders after the default values are set
+  //render the car SVG in this function to make sure it renders AFTER the default values are set
   renderCar = true;
 }
 
@@ -115,7 +116,8 @@ function handleChoiceClick(choice, categoryName) {
     </div>
 
     <div class="h-full w-full relative flex justify-center items-center py-y-standard">
-      <SVG150 v-if="renderCar" :color="configuration.colors.hex" />
+      <SVG150 v-if="renderCar" 
+      :color="configuration.colors.hex"  />
     </div>
 
     <button @click="console.log(configuration)">Logga konfigurationen</button>
@@ -129,7 +131,7 @@ function handleChoiceClick(choice, categoryName) {
           @click="toggleCategory('model')" 
           class="flex flex-col justify-between w-full px-x-standard py-y-standard">
           <div class="text-lg font-bold">{{ content.configurator.choiceHeadings.model }}</div>
-          <div>{{ configuration.modelName || 'Choose' }}</div>
+          <div>{{ configuration.modelName }}</div>
         </button>
 
         <!-- Render car model choices when expanded -->
