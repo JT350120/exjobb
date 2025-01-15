@@ -11,6 +11,8 @@ const configuration = globalVariables.configuration;
 //Do not render the car until default configuration is loaded
 let renderCar = false;
 
+
+
 onMounted(() => {
   applyDefaultConfiguration(globalVariables.configuration.chosenModel);
 });
@@ -117,7 +119,9 @@ function handleChoiceClick(choice, categoryName) {
 
     <div class="h-full w-full relative flex justify-center items-center py-y-standard">
       <SVG150 v-if="renderCar" 
-      :color="configuration.colors.hex"  />
+      :color="configuration.colors.hex"
+      :wheels="configuration.wheels.id"
+        />
     </div>
 
     <button @click="console.log(configuration)">Logga konfigurationen</button>

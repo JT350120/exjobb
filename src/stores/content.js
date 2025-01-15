@@ -116,13 +116,13 @@ export const useContentStore = defineStore("content", {
                     wheels: [
                         {
                             name: "Standard",
-                            id: "src",
+                            id: "rims_standard",
                             price: 0,
                         },
                         {
                             name: "Posh",
-                            id: "src",
-                            price: 6500,
+                            id: "rims_posh",
+                            price: 8500,
                         },
                     ],
                     extras: [
