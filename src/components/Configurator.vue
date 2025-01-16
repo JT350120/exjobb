@@ -11,14 +11,13 @@ const configuration = globalVariables.configuration;
 //Do not render the car until default configuration is loaded
 let renderCar = false;
 
-
-
 onMounted(() => {
   applyDefaultConfiguration(globalVariables.configuration.chosenModel);
 });
 
 onUnmounted(() => {
   console.log('här ska konfigurationen sparas i localstorage');
+
   renderCar = false;
 });
 
@@ -68,6 +67,39 @@ function handleChoiceClick(choice, categoryName) {
     configuration[categoryName] = choice;
   }
   configuration.price = summarize(configuration.chosenModel);
+}
+
+const isSelected = computed(() => {
+  return (choice, categoryName) => {
+    if (categoryName === 'extras') {
+      return globalVariables.configuration.extras.some(extra => extra.name === choice.name);
+    } else if (categoryName === 'model') {
+      return globalVariables.configuration.chosenModel === choice;
+    } else {
+      return globalVariables.configuration[categoryName].name === choice.name;
+    }
+  };
+});
+
+function configStorage(value) {
+  if (value === 'get') {
+    const config = JSON.parse(localStorage.getItem('config'));
+    if (config) {
+      //Updating variables individually for vue reactivity
+      globalVariables.configuration.chosenModel = config.chosenModel;
+      globalVariables.configuration.modelName = config.modelName;
+      globalVariables.configuration.price = config.price;
+      globalVariables.configuration.colors = config.colors;
+      globalVariables.configuration.drivetrains = config.drivetrains;
+      globalVariables.configuration.wheels = config.wheels;
+
+      if (config.extras) {
+        globalVariables.configuration.extras.splice(0, globalVariables.configuration.extras.length, ...config.extras);
+      }
+    }
+  } else {
+    localStorage.setItem('config', JSON.stringify(value));
+  }
 }
 </script>
 
@@ -124,7 +156,14 @@ function handleChoiceClick(choice, categoryName) {
         />
     </div>
 
-    <button @click="console.log(configuration)">Logga konfigurationen</button>
+    <div class="flex justify-end mx-x-standard">
+        <button class="text-md md:text-lg font-bold mr-x-standard" @click="configStorage(configuration)">
+          Spara bil
+        </button>
+        <button class="text-md md:text-lg font-bold" @click="configStorage('get')">
+          Ladda sparad bil
+        </button>
+    </div>
     
   </section>
 
@@ -144,7 +183,7 @@ function handleChoiceClick(choice, categoryName) {
             v-for="(carModel, index) in models" 
             :key="index" 
             @click="configuration.chosenModel = index; configuration.modelName = carModel.model; configuration.price = summarize(index); applyDefaultConfiguration(index)" 
-            :class="{ selected: configuration.chosenModel === index }" 
+            :class="{ selected: isSelected(index, 'model') }"
             class="block w-full text-left px-x-standard py-y-standard border-t-2 border-black">
             {{ carModel.model }}
           </button>
@@ -168,7 +207,7 @@ function handleChoiceClick(choice, categoryName) {
             v-for="choice in category" 
             :key="choice.name" 
             @click="handleChoiceClick(choice, categoryName)" 
-            :class="{ selected: categoryName === 'extras' ? configuration.extras.includes(choice) : configuration[categoryName] === choice }" 
+            :class="{ selected: isSelected(choice, categoryName) }"
             class="block w-full text-left px-x-standard py-y-standard border-t-2 border-black">
             {{ choice.name }}
           </button>
