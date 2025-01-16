@@ -17,7 +17,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   console.log('här ska konfigurationen sparas i localstorage');
-
   renderCar = false;
 });
 
@@ -36,6 +35,7 @@ function applyDefaultConfiguration(chosen) {
   configuration.drivetrains = content.models[chosen].choices.drivetrains[0];
   configuration.colors = content.models[chosen].choices.colors[0];
   configuration.wheels = content.models[chosen].choices.wheels[0];
+  configuration.extras = [];
 
   //render the car SVG in this function to make sure it renders AFTER the default values are set
   renderCar = true;
