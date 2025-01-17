@@ -104,8 +104,8 @@ function configStorage(value) {
 </script>
 
 <template>
-  <div class="flex flex-col h-full md:flex-row md:min-h-[82vh] bg-white">
-    <section class="flex flex-col h-[400px] md:h-full md:w-full">
+  <div class="flex flex-col h-full md:flex-row md:h-[82vh] bg-white">
+    <section class="flex flex-col h-full md:w-full">
       <div>
         <div class="flex flex-row justify-between px-x-standard py-y-standard">
           <h1 class="text-xl md:text-2xl font-bold">Din {{ configuration.modelName }} </h1>
@@ -149,20 +149,29 @@ function configStorage(value) {
       <div class="w-[162.5px] md:w-[342.5px] bg-black h-[2px]"/>
     </div>
 
-    <div class="h-full w-full relative flex justify-center items-center py-y-standard">
-      <SVG150 v-if="renderCar" 
+    <div class="h-full w-full relative flex justify-center items-center">
+      <SVG150 class="mx-x-standard" v-if="renderCar" 
       :color="configuration.colors.hex"
       :wheels="configuration.wheels.id"
         />
     </div>
 
-    <div class="flex justify-end mx-x-standard">
-        <button class="text-md md:text-lg font-bold mr-x-standard" @click="configStorage(configuration)">
+    <div class="flex flex-col self-start md:self-auto md:flex-row mx-x-standard my-y-standard md:justify-between">
+      <div class="flex flex-col md:flex-row w-full">
+        <button class="text-left md:text-center text-md md:text-lg font-bold mr-x-standard mb-[8px] md:mb-0 whitespace-nowrap" @click="configStorage(configuration)">
           Spara bil
         </button>
-        <button class="text-md md:text-lg font-bold" @click="configStorage('get')">
+        <button class="text-left md:text-center text-md md:text-lg font-bold mb-[8px] md:mb-0 whitespace-nowrap" @click="configStorage('get')">
           Ladda sparad bil
         </button>
+      </div>
+
+      <div class="flex">
+        <button class="text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('dealers')">
+          Hitta återförsäljare
+        </button>
+      </div>
+
     </div>
     
   </section>
