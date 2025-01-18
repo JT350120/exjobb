@@ -5,7 +5,7 @@ const globalVariables = useGlobalStore();
 </script>
 
 <template>
-  <nav class="md:hidden z-999 top-[80px] absolute h-[82vh] text-lg w-full flex flex-col justify-evenly items-center bg-white">
+  <nav class="md:hidden z-999 top-[80px] absolute h-[82vh] text-lg w-full flex flex-col justify-evenly items-center border-b-2 border-black bg-white">
     <div class="mb-y-standard">
       <button @click="globalVariables.show('models')">Modeller</button>
     </div>

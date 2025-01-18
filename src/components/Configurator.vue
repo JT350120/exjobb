@@ -16,7 +16,6 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-  console.log('här ska konfigurationen sparas i localstorage');
   renderCar = false;
 });
 
@@ -48,7 +47,7 @@ function summarize(chosen) {
   const totalSum =
     configuration.drivetrains.price +
     configuration.colors.price +
-    configuration.wheels.price + 
+    configuration.wheels.price +
     extrasSum
 
   return totalSum + content.models[chosen].startingPrice;
@@ -104,83 +103,90 @@ function configStorage(value) {
 </script>
 
 <template>
-  <div class="flex flex-col h-full md:flex-row md:h-[82vh] bg-white">
+  <div class="flex flex-col max-w-full h-full md:flex-row md:h-[82vh] bg-white">
     <section class="flex flex-col h-full md:w-full">
       <div>
-        <div class="flex flex-row justify-between px-x-standard py-y-standard">
+        <div class="flex flex-row justify-between px-x-standard pt-y-standard">
           <h1 class="text-xl md:text-2xl font-bold">Din {{ configuration.modelName }} </h1>
           <h2 class="text-lg md:text-xl font-bold self-center">{{ configuration.price }} kr</h2>
         </div>
-        <div class="relative left-[160px] md:left-[340px] top-[2px] mt-[-26px]">
-          <svg
-            width="100px"
-            height="35px"
-            viewBox="0 0 100.34901 35.690483"
-            version="1.1"
-            id="svg1"
-            inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-            sodipodi:docname="line_car.svg"
-            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-            xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:svg="http://www.w3.org/2000/svg">
-            <defs
-              id="defs1" />
-            <g
-              inkscape:label="Lager 1"
-              inkscape:groupmode="layer"
-              id="layer1"
-              transform="translate(-64.331587,-132.47344)">
+
+        <!--Decorative border with SVG-->
+        <div class="flex">
+          <div class=" border-b-2 w-[45%] md:w-[35%]" />
+          <div v-if="!globalVariables.mainRendering.menu" class="w-auto">
+            <svg
+              width="72px"
+              height="25px"
+              viewBox="0 0 100.74901 35.190483"
+              version="1.1"
+              id="svg1"
+              inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+              sodipodi:docname="line_car.svg"
+              xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+              xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:svg="http://www.w3.org/2000/svg">
+              <defs
+                id="defs1" />
               <g
-                id="g7"
-                style="stroke-width:2;stroke-dasharray:none">
+                inkscape:label="Lager 1"
+                inkscape:groupmode="layer"
+                id="layer1"
+                transform="translate(-64.331587,-132.47344)">
                 <g
-                  id="g9">
-                  <path
-                    style="fill:none;fill-opacity:0.353868;stroke:#000000;stroke-width:2;stroke-dasharray:none"
-                    d="m 65.490447,167.94543 c -1.98923,-8.8844 16.035316,-28.37741 23.434778,-31.33719 8.342773,-3.33711 21.303615,-3.9248 30.370895,-2.11135 7.67791,1.53559 9.67102,13.81717 16.0787,16.07871 12.99394,4.5861 24.47337,1.74606 28.33564,17.19514"
-                    id="car"
-                    sodipodi:nodetypes="csssc" />
+                  id="g7"
+                  style="stroke-width:3;stroke-dasharray:none">
+                  <g
+                    id="g9">
+                    <path
+                      style="fill:none;fill-opacity:0.353868;stroke:#000000;stroke-width:3;stroke-dasharray:none"
+                      d="m 65.490447,167.94543 c -1.98923,-8.8844 16.035316,-28.37741 23.434778,-31.33719 8.342773,-3.33711 21.303615,-3.9248 30.370895,-2.11135 7.67791,1.53559 9.67102,13.81717 16.0787,16.07871 12.99394,4.5861 24.47337,1.74606 28.33564,17.19514"
+                      id="car"
+                      sodipodi:nodetypes="csssc" />
+                  </g>
                 </g>
               </g>
-            </g>
-          </svg>
+            </svg>
+          </div>
         </div>
-      <div class="w-[162.5px] md:w-[342.5px] bg-black h-[2px]"/>
-    </div>
-
-    <div class="h-full w-full relative flex justify-center items-center">
-      <SVG150 class="mx-x-standard" v-if="renderCar" 
-      :color="configuration.colors.hex"
-      :wheels="configuration.wheels.id"
-        />
-    </div>
-
-    <div class="flex flex-col self-start md:self-auto md:flex-row mx-x-standard my-y-standard md:justify-between">
-      <div class="flex flex-col md:flex-row w-full">
-        <button class="text-left md:text-center text-md md:text-lg font-bold mr-x-standard mb-[8px] md:mb-0 whitespace-nowrap" @click="configStorage(configuration)">
-          Spara bil
-        </button>
-        <button class="text-left md:text-center text-md md:text-lg font-bold mb-[8px] md:mb-0 whitespace-nowrap" @click="configStorage('get')">
-          Ladda sparad bil
-        </button>
       </div>
 
-      <div class="flex">
-        <button class="text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('dealers')">
-          Hitta återförsäljare
-        </button>
+      <div class="relative flex justify-center h-full items-center">
+        <!-- Had to hide the SVG here manually if mobile menu is open, z-index does not seem to affect it -->
+        <SVG150 class="mx-x-standard h-auto max-w-full"
+          v-if="renderCar && !globalVariables.mainRendering.menu"
+          :color="configuration.colors.hex" :wheels="configuration.wheels.id" />
       </div>
 
-    </div>
-    
-  </section>
+      <div class="flex flex-col self-end md:self-auto md:flex-row mx-x-standard my-y-standard md:justify-between">
+        <div class="flex flex-col md:flex-row w-full">
+          <button
+            class="text-right md:text-center text-md md:text-lg font-bold mr-x-standard mb-[8px] md:mb-0 whitespace-nowrap"
+            @click="configStorage(configuration)">
+            Spara bil
+          </button>
+          <button class="text-right md:text-center text-md md:text-lg font-bold mb-[8px] md:mb-0 whitespace-nowrap"
+            @click="configStorage('get')">
+            Ladda sparad bil
+          </button>
+        </div>
 
-    <section class="bg-white h-full md:h-[82vh] overflow-scroll md:w-[40vw] border-t-2 md:border-t-0 md:border-l-2 border-black">
+        <div class="flex">
+          <button class="text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('dealers')">
+            Hitta återförsäljare
+          </button>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section
+      class="bg-white h-full md:h-[82vh] overflow-scroll md:w-[40vw] md:mr-x-standard border-t-2 md:border-t-0 md:border-x-2 border-black">
       <!-- Render a button for car models -->
       <div class="menuItem border-b-2 h-auto border-black flex flex-col">
-        <button 
-          @click="toggleCategory('model')" 
+        <button @click="toggleCategory('model')"
           class="flex flex-col justify-between w-full px-x-standard py-y-standard">
           <div class="text-lg font-bold">{{ content.configurator.choiceHeadings.model }}</div>
           <div>{{ configuration.modelName }}</div>
@@ -188,10 +194,8 @@ function configStorage(value) {
 
         <!-- Render car model choices when expanded -->
         <div v-if="expandedCategory.name === 'model'">
-          <button 
-            v-for="(carModel, index) in models" 
-            :key="index" 
-            @click="configuration.chosenModel = index; configuration.modelName = carModel.model; configuration.price = summarize(index); applyDefaultConfiguration(index)" 
+          <button v-for="(carModel, index) in models" :key="index"
+            @click="configuration.chosenModel = index; configuration.modelName = carModel.model; configuration.price = summarize(index); applyDefaultConfiguration(index)"
             :class="{ selected: isSelected(index, 'model') }"
             class="block w-full text-left px-x-standard py-y-standard border-t-2 border-black">
             {{ carModel.model }}
@@ -200,22 +204,21 @@ function configStorage(value) {
       </div>
 
       <!-- Render buttons for each category -->
-      <div v-for="(category, categoryName) in models[configuration.chosenModel].choices" :key="categoryName" class="menuItem border-b-2 h-auto border-black flex flex-col">
-        <button 
-          @click="toggleCategory(categoryName)" 
+      <div v-for="(category, categoryName) in models[configuration.chosenModel].choices" :key="categoryName"
+        class="menuItem border-b-2 h-auto border-black flex flex-col">
+        <button @click="toggleCategory(categoryName)"
           class="flex flex-col justify-between w-full px-x-standard py-y-standard">
           <div class="text-lg font-bold">{{ content.configurator.choiceHeadings[categoryName] }}</div>
           <div v-if="configuration[categoryName]?.name">{{ configuration[categoryName].name }}</div>
-          <div v-if="configuration[categoryName]?.length === 0 || configuration[categoryName]?.length === null">Inga valda</div>
-          <div v-if="configuration[categoryName]?.length > 0 || configuration[categoryName]?.length === null">{{ configuration[categoryName]?.length }} valda</div>
+          <div v-if="configuration[categoryName]?.length === 0 || configuration[categoryName]?.length === null">Inga
+            valda</div>
+          <div v-if="configuration[categoryName]?.length > 0 || configuration[categoryName]?.length === null">{{
+            configuration[categoryName]?.length }} valda</div>
         </button>
 
         <!-- Render choices when the category is expanded -->
         <div v-if="expandedCategory.name === categoryName">
-          <button 
-            v-for="choice in category" 
-            :key="choice.name" 
-            @click="handleChoiceClick(choice, categoryName)" 
+          <button v-for="choice in category" :key="choice.name" @click="handleChoiceClick(choice, categoryName)"
             :class="{ selected: isSelected(choice, categoryName) }"
             class="block w-full text-left px-x-standard py-y-standard border-t-2 border-black">
             {{ choice.name }}
@@ -229,12 +232,14 @@ function configStorage(value) {
 </template>
 
 <style scoped>
-.menuItem:last-child {
-  border-right: none;
-  border-bottom: none;
-}
+
 
 .selected {
   background-color: #86B2E6;
+}
+
+.svg-container {
+  overflow: hidden;
+  max-width: 100%;
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup>
-import { computed, defineProps } from 'vue';
+import { computed } from 'vue';
 import { useGlobalStore } from '../stores/global'
 
 const globalVariables = useGlobalStore();
@@ -41,14 +41,13 @@ const spoiler = computed(() => {
 });
 </script>
 
-<template>
+<template >
   <div>
 
 <svg
    width="100%"
    height="100%"
    viewBox="0 0 104.95582 80.817055"
-   version="1.1"
    id="svg1"
    xml:space="preserve"
    sodipodi:docname="150.svg"
@@ -56,25 +55,8 @@ const spoiler = computed(() => {
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:document-units="mm"
-     inkscape:zoom="0.93103385"
-     inkscape:cx="151.98158"
-     inkscape:cy="77.870423"
-     inkscape:window-width="1920"
-     inkscape:window-height="974"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" /><defs
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <defs
      id="defs1"><inkscape:path-effect
        effect="bspline"
        id="path-effect62"
@@ -607,5 +589,7 @@ const spoiler = computed(() => {
 </template>
 
 <style scoped>
-
+svg {
+  display: block;
+}
 </style>
