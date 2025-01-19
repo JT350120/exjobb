@@ -18,7 +18,7 @@ export default {
       "green": "#94997A",
       "yellow": "#D1BE40",
       "blue": "#86B2E6",
-      "light-blue": "#95C5FF",
+      "map-blue": "#80D2F1",
     },
     fontSize: {
       "sm": '0.8rem',
@@ -43,6 +43,7 @@ export default {
         'castle2': "url('/src/assets/backgrounds/castle_bk_2.png')",
         'shore': "url('/src/assets/backgrounds/shoreline_bk.png')",
         'edward': "url('/src/assets/backgrounds/shears.png')",
+        'map': "url('/src/assets/backgrounds/map.png')",
     },
   },
   plugins: [],
