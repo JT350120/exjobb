@@ -17,14 +17,14 @@ const dealers = computed(() => {
 </script>
 
 <template>
-  <div class="flex flex-col-reverse h-full md:flex-row md:h-[82vh]">
+  <div class="flex flex-col-reverse min-h-full md:flex-row md:h-[82vh]">
     <section
       class="bg-map-blue h-full md:overflow-scroll md:w-[40%] border-t-2 md:border-t-0 md:border-r-2 flex flex-col border-black">
-      <DealerListItem class="h-full" v-for="(dealer, index) in dealers" :key="index" :data="dealer" :index="index" />
+      <DealerListItem v-for="(dealer, index) in dealers" :key="index" :data="dealer" :index="index" />
     </section>
-    <section class="bg-map-blue flex justify-center items-center h-[400px] md:h-full md:w-full">
+    <section class="bg-map-blue flex justify-center items-center h-full md:w-full py-y-standard px-x-standard">
 
-      <svg width="90%" height="90%" viewBox="0 0 197.32411 96.844337" version="1.1" id="svg1" xml:space="preserve"
+      <svg width="100%" height="100%" viewBox="0 0 197.32411 96.844337" version="1.1" id="svg1" xml:space="preserve"
         inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)" sodipodi:docname="map.svg"
         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
