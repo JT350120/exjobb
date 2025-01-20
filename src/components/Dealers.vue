@@ -1,8 +1,12 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, reactive } from 'vue'
 import DealerListItem from './DealerListItem.vue'
 import { useContentStore } from '../stores/content'
 import { useGlobalStore } from '../stores/global'
+
+let state = reactive({ 
+  hoveredPin: null,
+});
 
 const content = useContentStore();
 const globalVariables = useGlobalStore();
@@ -108,107 +112,29 @@ const dealers = computed(() => {
               d="m 431.38188,252.49558 c -2.64646,0.54354 -2.90034,4.04316 -3.13249,6.2547 -0.14324,2.53514 -0.0581,5.18674 1.00237,7.48798 0.6355,3.47557 3.74397,5.89996 6.3147,8.06954 2.11086,1.56611 5.61126,3.24844 7.93603,1.26754 1.90512,-3.18541 -1.03183,-6.67024 -2.29699,-9.49506 -1.90144,-3.35489 -4.88651,-6.01079 -6.11744,-9.75606 -0.79789,-1.51078 -1.72869,-3.72479 -3.70618,-3.82864 z"
               id="path21" transform="matrix(0.26458333,0,0,0.26458333,7.0248138,98.724731)" />
           </g>
-
-
-          <!--
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="skeppskoping" tabindex="0"
-            :data="content.dealers[7]"
-            @keydown.enter="globalVariables.dealerRendering.active = 7, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 7, globalVariables.dealerRendering.noneChosen = false"
-            cx="103.11295" cy="145.39926" r="3.5" inkscape:label="skeppskoping" />
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="klinteborg" tabindex="0" aria-label="kartnål Klinteborg"
-            :data="content.dealers[0]"
-            @click="globalVariables.dealerRendering.active = 0, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.enter="globalVariables.dealerRendering.active = 0, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 0, globalVariables.dealerRendering.noneChosen = false"
-            cx="138.67975" cy="157.51178" r="3.5" inkscape:label="klinteborg" />
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="uthamn" tabindex="0"
-            :data="content.dealers[1]"
-            @click="globalVariables.dealerRendering.active = 1, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.enter="globalVariables.dealerRendering.active = 1, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 1, globalVariables.dealerRendering.noneChosen = false"
-            cx="128.54927" cy="111.7044" r="3.5" inkscape:label="uthamn" />
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="breda" tabindex="0"
-            :data="content.dealers[5]"
-            @click="globalVariables.dealerRendering.active = 5, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.enter="globalVariables.dealerRendering.active = 5, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 5, globalVariables.dealerRendering.noneChosen = false"
-            cx="104.43433" cy="161.91634" r="3.5" inkscape:label="breda" />
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="osterborg" tabindex="0"
-            :data="content.dealers[6]"
-            @click="globalVariables.dealerRendering.active = 6, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.enter="globalVariables.dealerRendering.active = 6, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 6, globalVariables.dealerRendering.noneChosen = false"
-            cx="147.81921" cy="187.68298" r="3.5" inkscape:label="osterborg" />
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="anderhamn" tabindex="0"
-            :data="content.dealers[4]"
-            @click="globalVariables.dealerRendering.active = 4, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.enter="globalVariables.dealerRendering.active = 4, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 4, globalVariables.dealerRendering.noneChosen = false"
-            cx="162.35423" cy="153.98811" r="3.5" inkscape:label="anderhamn" />
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="landnas" tabindex="0"
-            :data="content.dealers[3]"
-            @click="globalVariables.dealerRendering.active = 3, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.enter="globalVariables.dealerRendering.active = 3, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 3, globalVariables.dealerRendering.noneChosen = false"
-            cx="71.065422" cy="111.56204" r="3.5" inkscape:label="landnas" />
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="salvall" tabindex="0"
-            :data="content.dealers[8]"
-            @click="globalVariables.dealerRendering.active = 8, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.enter="globalVariables.dealerRendering.active = 8, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 8, globalVariables.dealerRendering.noneChosen = false"
-            cx="139.13853" cy="134.90736" r="3.5" inkscape:label="salvall" />
-          <circle style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-            id="skareborg" tabindex="0" 
-            :data="content.dealers[2]"
-            @click="globalVariables.dealerRendering.active = 2, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.enter="globalVariables.dealerRendering.active = 2, globalVariables.dealerRendering.noneChosen = false"
-            @keydown.space="globalVariables.dealerRendering.active = 2, globalVariables.dealerRendering.noneChosen = false"
-            cx="166.55879" cy="174.23232" r="3.5" inkscape:label="skareborg" />
--->
-
-<circle
-  v-for="(dealer, index) in dealers"
-  :key="index"
-  style="fill:#94997a;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
-  :id="dealer.town.toLowerCase()"
-  :tabindex="index + 1"
-  @click="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
-  @keydown.enter="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
-  @keydown.space="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
-  :cx="dealer.coordinates[0]"
-  :cy="dealer.coordinates[1]"
-  r="3.5"
-  :aria-label="'klickbar kartnål ' + dealer.town"
-/>
-
+            <circle
+              v-for="(dealer, index) in dealers"
+              :key="index"
+              class="cursor-pointer duration-200"
+              style="fill:#D1BE40;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
+              :id="dealer.town.toLowerCase()"
+              :tabindex="index + 1"
+              @click="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
+              @keydown.enter="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
+              @keydown.space="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
+              :cx="dealer.coordinates[0]"
+              :cy="dealer.coordinates[1]"
+              @mouseover="state.hoveredPin = index"
+              @mouseleave="state.hoveredPin = null"
+              :r="state.hoveredPin === index ? 4.5 : 3.5"
+              :aria-label="'klickbar kartnål ' + dealer.town"
+            />
         </g>
-
       </svg>
-
-
-
-
-
-      <!--<button class="pin bg-yellow border-2 border-black absolute" v-for="(dealer, index) in dealers" :key="index" :data="dealer"
-       :style="{ left: content.dealers[index].coordinates[0] + 'px', top: content.dealers[index].coordinates[1] + 'px' }"
-      @click="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"></button>-->
     </section>
   </div>
 </template>
 
 <style scoped>
-.pin {
-  width: 100%;
-  height: 100%;
-  border-radius: 999px;
-}
+
 </style>
