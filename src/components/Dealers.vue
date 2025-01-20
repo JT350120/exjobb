@@ -19,8 +19,8 @@ const dealers = computed(() => {
 <template>
   <div class="flex flex-col-reverse h-full md:flex-row md:h-[82vh]">
     <section
-      class="bg-map-blue h-full md:overflow-scroll md:h-full md:w-[40%] border-t-2 md:border-t-0 md:border-r-2 border-black">
-      <DealerListItem v-for="(dealer, index) in dealers" :key="index" :data="dealer" :index="index" />
+      class="bg-map-blue h-full md:overflow-scroll md:w-[40%] border-t-2 md:border-t-0 md:border-r-2 flex flex-col border-black">
+      <DealerListItem class="h-full" v-for="(dealer, index) in dealers" :key="index" :data="dealer" :index="index" />
     </section>
     <section class="bg-map-blue flex justify-center items-center h-[400px] md:h-full md:w-full">
 
