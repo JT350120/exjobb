@@ -38,8 +38,8 @@ console.log(globalVariables.svgStates.configuration)
         <h2 class="text-xl md:text-2xl font-bold px-x-standard text-center">{{ content.models[index].exploreHeadings[2] }}</h2>
       </div>
       <div class="md:w-[50%] h-full px-x-standard py-y-standard bg-cover">
-        <div class="relative flex justify-center h-full items-center">
-          <InfoBox class="h-full absolute top-0 border-2 border-black" v-if="globalVariables.infoBoxRendering.active != null" :model="index"/>
+        <div class="relative flex justify-center h-full w-full items-center">
+          <InfoBox class="h-full w-full absolute top-0 border-2 border-black" v-if="globalVariables.infoBoxRendering.active != null" :model="index"/>
         <!-- Had to hide the SVG here manually if mobile menu is open, z-index does not seem to affect it -->
         <SVG150 class="mx-x-standard mt-y-standard h-auto max-w-full transform -scale-x-100"
           v-show="!globalVariables.mainRendering.menu && globalVariables.infoBoxRendering.active === null"
