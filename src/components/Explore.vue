@@ -3,6 +3,7 @@ import { computed, reactive } from 'vue'
 import { useContentStore } from '../stores/content'
 import { useGlobalStore } from '../stores/global';
 import SVG150 from './SVG150.vue';
+import InfoBox from './Infobox.vue';
 
 const globalVariables = useGlobalStore();
 const content = useContentStore();
@@ -38,12 +39,15 @@ console.log(globalVariables.svgStates.configuration)
       </div>
       <div class="md:w-[50%] h-full px-x-standard py-y-standard bg-cover">
         <div class="relative flex justify-center h-full items-center">
+          <InfoBox class="h-full absolute top-0 border-2 border-black" v-if="globalVariables.infoBoxRendering.active != null" :model="index"/>
         <!-- Had to hide the SVG here manually if mobile menu is open, z-index does not seem to affect it -->
         <SVG150 class="mx-x-standard mt-y-standard h-auto max-w-full transform -scale-x-100"
-          v-if="!globalVariables.mainRendering.menu"
-          :color="content.models[0].choices.colors[2].hex" :wheels="content.models[0].choices.wheels[0].id" />
+          v-show="!globalVariables.mainRendering.menu && globalVariables.infoBoxRendering.active === null"
+          :color="content.models[index].choices.colors[2].hex" :wheels="content.models[index].choices.wheels[0].id" />
         </div>
+        
       </div>
+      
     </section>
 
   </div>

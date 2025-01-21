@@ -15,6 +15,10 @@ export const useGlobalStore = defineStore("global", {
             active: null,
             noneChosen: true,
         },
+        infoBoxRendering: {
+            active: null,
+            noneChosen: true,
+        },
 
         //Loading default values for configuration
         configuration: {

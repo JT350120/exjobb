@@ -2,6 +2,7 @@
 import { computed, reactive } from 'vue';
 import { useGlobalStore } from '../stores/global'
 import { useContentStore } from '../stores/content';
+import Infobox from './Infobox.vue';
 
 const globalVariables = useGlobalStore();
 const content = useContentStore();
@@ -620,20 +621,17 @@ console.log(globalVariables.svgStates.configuration)
               class="cursor-pointer duration-200"
               style="fill:#86B2E6;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
               :tabindex="index + 1"
-              @click="state.pinsUnhovered = false, resetPinAnimation(), globalVariables.infoBoxRendering.active = index, globalVariables.infoBoxRendering.noneChosen = false"
+              @click="state.pinsUnhovered = false, console.log(globalVariables.infoBoxRendering.active), resetPinAnimation(), globalVariables.infoBoxRendering.active = index, globalVariables.infoBoxRendering.noneChosen = false"
               @keydown.enter="state.pinsUnhovered = false, resetPinAnimation(), globalVariables.infoBoxRendering.active = index, globalVariables.infoBoxRendering.noneChosen = false"
               @keydown.space="state.pinsUnhovered = false, resetPinAnimation(), globalVariables.infoBoxRendering.active = index, globalVariables.infoBoxRendering.noneChosen = false"
               :cx="point.coordinates[0]"
               :cy="point.coordinates[1]"
-              @mouseover="state.hoveredPin = index, resetPinAnimation(), state.pinsUnhovered = false, console.log(point.heading)"
+              @mouseover="state.hoveredPin = index, resetPinAnimation(), state.pinsUnhovered = false"
               @mouseleave="state.hoveredPin = null"
               :r="state.hoveredPin === index ? 4.5 : state.r"
               :aria-label="'klickbar punkt ' + point.heading"
             />
         </svg>
-
-
-
 </div>
 </template>
 
