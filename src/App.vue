@@ -9,6 +9,7 @@
   import Infobox from './components/Infobox.vue'
   import Menu from './components/Menu.vue'
   import Models from './components/Models.vue'
+  import Explore from './components/Explore.vue'
 
   import { useGlobalStore } from './stores/global'
 
@@ -25,6 +26,7 @@
       <Configurator v-if="globalVariables.mainRendering.configurator" class="w-full" />
       <Dealers v-show="globalVariables.mainRendering.dealers" class="w-full" />
       <Models v-show="globalVariables.mainRendering.models" class="w-full" />
+      <Explore v-if="globalVariables.mainRendering.explore" class="w-full" />
     </div>
     <Footer />
   </div>

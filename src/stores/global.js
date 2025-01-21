@@ -9,6 +9,7 @@ export const useGlobalStore = defineStore("global", {
             history: false,
             dealers: false,
             configurator: false,
+            explore: false,
         },
         dealerRendering: {
             active: null,
@@ -25,6 +26,10 @@ export const useGlobalStore = defineStore("global", {
             wheels: null,
             extras: [],
         },
+
+        svgStates: {
+            configuration: false,
+        }
     }),
     actions: {
 

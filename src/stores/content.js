@@ -5,16 +5,25 @@ export const useContentStore = defineStore("content", {
         models: [
             {
                 model: "150",
-                tagline: "Lorem ipsum, dolor sit",
                 startingPrice: 192000,
-                explore: [
+                exploreHeadings: [ 
+                    "150 är sig själv - precis som du","Liten bil, stor personlighet","Alltid steget före trenderna"
+                ],
+                explorePoints: [
                     {
-                        text: "Lorem ipsum dolor sit amet",
-                        img: "src",
+                        heading: 'El eller bensin',
+                        text: 'Välj mellan våra två effektiva bensinmotorer PlebTec och PoshTec eller varför inte BuzzTec - vårt eldrivna alternativ. Alla med nollutsläpp eftersom den här bilen faktiskt inte existerar på riktigt!',
+                        coordinates: [20,40],
                     },
                     {
-                        text: "Amet sit dolor ipsum lorem",
-                        img: "src",
+                        heading: 'LED-strålkastare',
+                        text: 'Ett ljus i mörkret - som standard erbjuds LED-strålkastare med kurvljus. Behöver du mer? Extraljus finns som tillval!',
+                        coordinates: [40,55],
+                    },
+                    {
+                        heading: 'För långresan',
+                        text: 'Låt inte storleken avskräcka - bagageutrymmet rymmer ett får med uppfällt baksäte och två får med baksätet nedfällt. Som tillval finns dessutom en stilig takmonterad koffert!',
+                        coordinates: [100,30],
                     },
                 ],
                 specifications: {
@@ -80,37 +89,37 @@ export const useContentStore = defineStore("content", {
                         {
                             name: "Stout metallic",
                             hex: "#1C1C14",
-                            price: 6500,
+                            price: 7200,
                         },
                         {
                             name: "Sunset metallic",
                             hex: "#F86400",
-                            price: 6500,
+                            price: 7200,
                         },
                         {
                             name: "Butternut metallic",
                             hex: "#E3AC59",
-                            price: 6500,
+                            price: 7200,
                         },
                         {
                             name: "Oxalis metallic",
                             hex: "#5E3A48",
-                            price: 6500,
+                            price: 7200,
                         },
                         {
                             name: "Pear metallic",
                             hex: "#94A322",
-                            price: 6500,
+                            price: 7200,
                         },
                         {
                             name: "Pacific metallic",
                             hex: "#0179B5",
-                            price: 6500,
+                            price: 7200,
                         },
                         {
                             name: "Strawberry metallic",
                             hex: "#DA0000",
-                            price: 6500,
+                            price: 7200,
                         },
                     ],
                     wheels: [
@@ -122,7 +131,7 @@ export const useContentStore = defineStore("content", {
                         {
                             name: "Posh",
                             id: "rims_posh",
-                            price: 8500,
+                            price: 8900,
                         },
                     ],
                     extras: [
@@ -144,7 +153,7 @@ export const useContentStore = defineStore("content", {
                         {
                             name: "Takmonterad koffert",
                             id: "rack",
-                            price: 3600,
+                            price: 3900,
                         },
                     ],
                 }

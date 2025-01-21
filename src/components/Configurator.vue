@@ -8,15 +8,19 @@ const content = useContentStore();
 const models = computed(() => content.models);
 const configuration = globalVariables.configuration;
 
+console.log(globalVariables.svgStates.configuration)
+
 //Do not render the car until default configuration is loaded
 let renderCar = false;
 
 onMounted(() => {
   applyDefaultConfiguration(globalVariables.configuration.chosenModel);
+  globalVariables.svgStates.configuration = true;
 });
 
 onUnmounted(() => {
   renderCar = false;
+  globalVariables.svgStates.configuration = false;
 });
 
 const expandedCategory = reactive({
@@ -154,9 +158,9 @@ function configStorage(value) {
 
       <div class="relative flex justify-center h-full items-center">
         <!-- Had to hide the SVG here manually if mobile menu is open, z-index does not seem to affect it -->
-        <SVG150 class="mx-x-standard h-auto max-w-full"
+        <SVG150 class="mx-x-standard mt-y-standard h-auto max-w-full"
           v-if="renderCar && !globalVariables.mainRendering.menu"
-          :color="configuration.colors.hex" :wheels="configuration.wheels.id" />
+          :color="configuration.colors.hex" :wheels="configuration.wheels.id" :configuratorMode="true"/>
       </div>
 
       <div class="flex flex-col self-end md:self-auto md:flex-row mx-x-standard my-y-standard md:justify-between">
