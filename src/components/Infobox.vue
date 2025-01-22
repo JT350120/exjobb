@@ -18,7 +18,7 @@ const props = defineProps({
 });
 
 let state = reactive({ 
-  chosenDrivetrain: null,
+  chosenDrivetrain: 0,
 });
 
 const model = props.model;
@@ -40,7 +40,7 @@ const specificationsMode = props.specificationsMode;
     </div>
 
     <!--If the InfoBox is showing general car specifications-->
-    <div v-if="specificationsMode" class="flex flex-col justify-evenly overflow-scroll h-full">
+    <div v-if="specificationsMode" class="flex flex-col justify-evenly h-full mt-y-standard md:mt-0">
       <h2 class="text-lg md:text-xl font-bold border-b-2 border-black">Tekniska data</h2>
       <div class="flex justify-between border-b-2 py-[8px]">
         <h3 class="text-md md:text-lg font-bold">Mått<span class="text-sm md:text-md font-normal"> (mm)</span></h3>
@@ -66,8 +66,8 @@ const specificationsMode = props.specificationsMode;
         </div>
       </div>
 
-      <div class="flex">
-        <div class="w-[50%] h-auto overflow-y-scroll">
+      <div class="flex overflow-y-scroll">
+        <div class="w-[50%] h-auto">
           <ul>
             <button :class="{'font-bold': state.chosenDrivetrain === index}"class="px-[8px] py-[8px] hover:font-bold" v-for="(drivetrain, index) in content.models[model].choices.drivetrains" :key="index" @click="state.chosenDrivetrain = index"> {{ drivetrain.name }}</button>
           </ul>

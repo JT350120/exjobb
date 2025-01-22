@@ -19,7 +19,7 @@ console.log(globalVariables.svgStates.configuration)
       <div class="bg-white md:w-[50%] h-auto md:h-full flex flex-col justify-center items-center border-b-2 border-black md:border-r-2 px-x-standard py-y-standard">
         <h1 class="text-xl md:text-2xl font-bold px-x-standard text-center">{{ content.models[index].exploreHeadings[0] }}</h1>
       </div>
-      <div class="md:w-[50%] h-full px-x-standard py-y-standard bg-cover bg-150_explore_img_1 bg-bottom  border-b-2 border-black">
+      <div class="md:w-[50%] h-full px-x-standard py-y-standard bg-cover bg-150_explore_img_village bg-bottom  border-b-2 border-black">
         
       </div>
     </section>
@@ -33,7 +33,7 @@ console.log(globalVariables.svgStates.configuration)
       </div>
     </section> 
 
-    <section class="w-full h-[82vh] flex flex-col md:flex-row bg-green">
+    <section class="w-full h-auto md:h-[82vh] flex flex-col md:flex-row bg-green">
       <div class="bg-white md:w-[50%] h-auto md:h-full flex flex-col justify-center items-center border-b-2 border-black  md:border-r-2 md:border-b-0 px-x-standard py-y-standard">
         <h2 class="text-xl md:text-2xl font-bold px-x-standard text-center">{{ content.models[index].exploreHeadings[2] }}</h2>
       </div>
