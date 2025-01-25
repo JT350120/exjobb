@@ -50,23 +50,23 @@ const globalVariables = useGlobalStore();
     </button>
 
     <!--Desktop menu-->
-    <nav class="hidden md:flex w-full justify-end">
+    <nav class="hidden md:flex w-full justify-end font-bold">
       <div class="mr-x-standard">
-        <button @click="globalVariables.show('models')">Modeller</button>
+        <button class="border-b-2 border-transparent hover:border-black duration-200" @click="globalVariables.show('models')">Modeller</button>
       </div>
       <div class="mr-x-standard">
-        <button @click="globalVariables.show('configurator'), globalVariables.configuration.model = content.models[0].model">Bygg din bil</button>
+        <button class="border-b-2 border-transparent hover:border-black duration-200" @click="globalVariables.show('configurator'), globalVariables.configuration.model = content.models[0].model">Bygg din bil</button>
       </div>
       <div class="mr-x-standard">
-        <button @click="globalVariables.show('dealers')">Återförsäljare</button>
+        <button class="border-b-2 border-transparent hover:border-black duration-200" @click="globalVariables.show('dealers')">Återförsäljare</button>
       </div>
       <div>
-        <button @click="globalVariables.show('history')">Vår historia</button>
+        <button class="border-b-2 border-transparent hover:border-black duration-200" @click="globalVariables.show('history')">Vår historia</button>
       </div>
     </nav>
 
     <!--Mobile hamburger menu-->
-    <button class="md:hidden flex flex-col w-[35px] h-[22px]" @click="globalVariables.mainRendering.menu = !globalVariables.mainRendering.menu">
+    <button aria-label="Stäng menyn" class="md:hidden flex flex-col w-[35px] h-[22px]" @click="globalVariables.mainRendering.menu = !globalVariables.mainRendering.menu">
       <div class="bg-black w-[35px] h-[2px] mb-[8px] duration-200" :class="{ upperClose: globalVariables.mainRendering.menu }"></div>
       <div class="bg-black w-[35px] h-[2px] mb-[8px]" :class="{hidden: globalVariables.mainRendering.menu }"></div>
       <div class="bg-black w-[35px] h-[2px] duration-200" :class="{ lowerClose: globalVariables.mainRendering.menu }"></div>

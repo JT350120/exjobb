@@ -28,7 +28,7 @@ const specificationsMode = props.specificationsMode;
 
 <template>
   <div class="flex flex-col relative justify-center bg-white py-y-standard px-x-standard">
-    <button class="w-[35px] h-[22px] absolute top-0 right-0 my-y-standard mx-x-standard"
+    <button aria-label="Stäng menyn" class="w-[35px] h-[22px] absolute top-0 right-0 my-y-standard mx-x-standard"
       @click="globalVariables.infoBoxRendering.active = null">
       <div class="bg-black w-[35px] h-[2px] mb-[8px] relative top-[10px] rotate-45 duration-200"></div>
       <div class="bg-black w-[35px] h-[2px] relative -rotate-45 duration-200"></div>

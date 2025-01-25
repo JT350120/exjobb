@@ -19,6 +19,7 @@ export default {
       "yellow": "#D1BE40",
       "blue": "#86B2E6",
       "map-blue": "#80D2F1",
+      "150-sky-blue": "#45B9C5",
     },
     fontSize: {
       "sm": '0.8rem',
@@ -44,6 +45,8 @@ export default {
         'shore': "url('/src/assets/backgrounds/shoreline_bk.png')",
         'edward': "url('/src/assets/backgrounds/shears.png')",
         '150_explore_img_village': "url('/src/assets/backgrounds/150_explore_img_village.png')",
+        '150_presentation_portrait': "url('/src/assets/backgrounds/150_presentation_portrait.png')",
+        '150_presentation_landscape': "url('/src/assets/backgrounds/150_presentation_landscape.png')",
     },
   },
   plugins: [],

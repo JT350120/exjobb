@@ -166,18 +166,18 @@ function configStorage(value) {
       <div class="flex flex-col self-end md:self-auto md:flex-row mx-x-standard my-y-standard md:justify-between">
         <div class="flex flex-col md:flex-row w-full">
           <button
-            class="text-right md:text-center text-md md:text-lg font-bold mr-x-standard mb-[8px] md:mb-0 whitespace-nowrap"
+            class="border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold mr-x-standard md:mb-0 whitespace-nowrap"
             @click="configStorage(configuration)">
             Spara bil
           </button>
-          <button class="text-right md:text-center text-md md:text-lg font-bold mb-[8px] md:mb-0 whitespace-nowrap"
+          <button class="border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold md:mb-0 whitespace-nowrap"
             @click="configStorage('get')">
             Ladda sparad bil
           </button>
         </div>
 
         <div class="flex">
-          <button class="text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('dealers')">
+          <button class="border-b-2 border-transparent hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('dealers')">
             Hitta återförsäljare
           </button>
         </div>

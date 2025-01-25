@@ -17,7 +17,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen">
+  <div class="flex flex-col">
     <Header />
     <div class="flex-grow flex">
       <Menu v-show="globalVariables.mainRendering.menu" class="w-full" />

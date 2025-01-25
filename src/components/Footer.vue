@@ -8,7 +8,7 @@ const address = content.footer.address;
 </script>
 
 <template>
-  <footer class="bg-black text-white px-x-standard py-y-standard flex">
+  <footer class="bg-black text-white px-x-standard py-y-standard flex min-h-[30vh] md:h-auto">
     <div class="flex relative w-full md:w-[220px]">
       <ul class="md:border-l-2 border-b-2 border-white p-[16px] w-full">
         <li class="first:font-bold first:mb-[8px]" v-for="(row, index) in address">{{ row }}</li>

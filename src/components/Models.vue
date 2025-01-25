@@ -8,7 +8,7 @@ const models = computed(() => content.models);
 </script>
 
 <template>
-  <div class="w-full min-h-full flex flex-col">
+  <div class="w-full flex flex-col">
     <ModelPresentation v-for="(model, index) in models" :key="index" :indexOfModel="index" :data="model" />
   </div>
 </template>
