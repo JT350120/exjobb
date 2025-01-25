@@ -158,7 +158,7 @@ function configStorage(value) {
 
       <div class="relative flex justify-center h-full items-center">
         <!-- Had to hide the SVG here manually if mobile menu is open, z-index does not seem to affect it -->
-        <SVG150 class="mx-x-standard mt-y-standard h-auto max-w-full"
+        <SVG150 class="mx-x-standard mt-y-standard h-full"
           v-if="renderCar && !globalVariables.mainRendering.menu"
           :color="configuration.colors.hex" :wheels="configuration.wheels.id" :configuratorMode="true"/>
       </div>
