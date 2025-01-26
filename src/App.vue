@@ -28,7 +28,7 @@
       <Models v-show="globalVariables.mainRendering.models" class="w-full" />
       <Explore v-if="globalVariables.mainRendering.explore" class="w-full" />
     </div>
-    <Footer />
+    <Footer v-show="!globalVariables.mainRendering.menu"/>
   </div>
 </template>
 
