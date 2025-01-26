@@ -224,8 +224,14 @@ function configStorage(value) {
         <div v-if="expandedCategory.name === categoryName">
           <button v-for="choice in category" :key="choice.name" @click="handleChoiceClick(choice, categoryName)"
             :class="{ selected: isSelected(choice, categoryName) }"
-            class="block w-full text-left px-x-standard py-y-standard border-t-2 border-black">
-            {{ choice.name }}
+            class="flex justify-between w-full text-left px-x-standard py-y-standard border-t-2 border-black"
+            :aria-label="`${choice.name}, ${choice.price} kr`">
+              <div>
+                {{ choice.name }}
+              </div>
+              <div>
+                <span v-if="choice.price != 0">+</span>{{ choice.price }} kr
+              </div>
           </button>
         </div>
 
