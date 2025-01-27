@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, onUnmounted, reactive, ref } from 'vue';
+import { computed, onMounted, onUnmounted, reactive } from 'vue';
 import { useContentStore } from '../stores/content';
 import { useGlobalStore } from '../stores/global';
 import SVG150 from './SVG150.vue';
@@ -25,6 +25,10 @@ onUnmounted(() => {
 
 const expandedCategory = reactive({
   name: null,
+});
+
+const saveBtn = reactive({
+  showSaved: false,
 });
 
 function toggleCategory(categoryName) {
@@ -104,6 +108,10 @@ function configStorage(value) {
     localStorage.setItem('config', JSON.stringify(value));
   }
 }
+
+function saveBtnTimeout() {
+    setTimeout(() => {saveBtn.showSaved = false}, 1000);
+}
 </script>
 
 <template>
@@ -119,35 +127,19 @@ function configStorage(value) {
         <div class="flex">
           <div class=" border-b-2 w-[45%] md:w-[35%]" />
           <div v-if="!globalVariables.mainRendering.menu" class="w-auto">
-            <svg
-              width="72px"
-              height="25px"
-              viewBox="0 0 100.74901 35.190483"
-              version="1.1"
-              id="svg1"
-              inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
-              sodipodi:docname="line_car.svg"
+            <svg width="72px" height="25px" viewBox="0 0 100.74901 35.190483" version="1.1" id="svg1"
+              inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)" sodipodi:docname="line_car.svg"
               xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-              xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
               xmlns:svg="http://www.w3.org/2000/svg">
-              <defs
-                id="defs1" />
-              <g
-                inkscape:label="Lager 1"
-                inkscape:groupmode="layer"
-                id="layer1"
+              <defs id="defs1" />
+              <g inkscape:label="Lager 1" inkscape:groupmode="layer" id="layer1"
                 transform="translate(-64.331587,-132.47344)">
-                <g
-                  id="g7"
-                  style="stroke-width:3;stroke-dasharray:none">
-                  <g
-                    id="g9">
-                    <path
-                      style="fill:none;fill-opacity:0.353868;stroke:#000000;stroke-width:3;stroke-dasharray:none"
+                <g id="g7" style="stroke-width:3;stroke-dasharray:none">
+                  <g id="g9">
+                    <path style="fill:none;fill-opacity:0.353868;stroke:#000000;stroke-width:3;stroke-dasharray:none"
                       d="m 65.490447,167.94543 c -1.98923,-8.8844 16.035316,-28.37741 23.434778,-31.33719 8.342773,-3.33711 21.303615,-3.9248 30.370895,-2.11135 7.67791,1.53559 9.67102,13.81717 16.0787,16.07871 12.99394,4.5861 24.47337,1.74606 28.33564,17.19514"
-                      id="car"
-                      sodipodi:nodetypes="csssc" />
+                      id="car" sodipodi:nodetypes="csssc" />
                   </g>
                 </g>
               </g>
@@ -158,26 +150,32 @@ function configStorage(value) {
 
       <div class="relative flex justify-center h-full items-center">
         <!-- Had to hide the SVG here manually if mobile menu is open, z-index does not seem to affect it -->
-        <SVG150 class="mx-x-standard my-y-standard h-full"
-          v-if="renderCar && !globalVariables.mainRendering.menu"
-          :color="configuration.colors.hex" :wheels="configuration.wheels.id" :configuratorMode="true"/>
+        <SVG150 class="mx-x-standard my-y-standard h-full" v-if="renderCar && !globalVariables.mainRendering.menu"
+          :color="configuration.colors.hex" :wheels="configuration.wheels.id" :configuratorMode="true" />
       </div>
 
       <div class="flex flex-col self-end md:self-auto md:flex-row mx-x-standard my-y-standard md:justify-between">
         <div class="flex flex-col md:flex-row w-full">
           <button
-            class="border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold mr-x-standard md:mb-0 whitespace-nowrap"
-            @click="configStorage(configuration)">
-            Spara bil
+            class="relative border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold mr-x-standard md:mb-0 whitespace-nowrap"
+            @click="configStorage(configuration), saveBtn.showSaved = true, saveBtnTimeout()">
+              Spara bil
+            <span class="absolute left-0 bottom-0 opacity-0 transform transition-all duration-200"
+              :class="{ 'opacity-100 bottom-[33px]': saveBtn.showSaved}">
+              Sparad
+            </span>
           </button>
-          <button class="border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold md:mb-0 whitespace-nowrap"
+          <button
+            class="border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold md:mb-0 whitespace-nowrap"
             @click="configStorage('get')">
             Ladda sparad bil
           </button>
         </div>
 
         <div class="flex">
-          <button class="border-b-2 border-transparent hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('dealers')">
+          <button
+            class="border-b-2 border-transparent hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap"
+            @click="globalVariables.show('dealers')">
             Hitta återförsäljare
           </button>
         </div>
@@ -226,12 +224,12 @@ function configStorage(value) {
             :class="{ selected: isSelected(choice, categoryName) }"
             class="flex justify-between w-full text-left px-x-standard py-y-standard border-t-2 border-black"
             :aria-label="`${choice.name}, ${choice.price} kr`">
-              <div>
-                {{ choice.name }}
-              </div>
-              <div>
-                <span v-if="choice.price != 0">+</span>{{ choice.price }} kr
-              </div>
+            <div>
+              {{ choice.name }}
+            </div>
+            <div>
+              <span v-if="choice.price != 0">+</span>{{ choice.price }} kr
+            </div>
           </button>
         </div>
 
@@ -242,8 +240,6 @@ function configStorage(value) {
 </template>
 
 <style scoped>
-
-
 .selected {
   background-color: #86B2E6;
 }
