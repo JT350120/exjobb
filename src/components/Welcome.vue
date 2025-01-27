@@ -6,6 +6,7 @@ let state = reactive({
   showLogo: false,
   showH1: false,
   showH2: false,
+  killMain: false,
 });
 
 onMounted(() => {
@@ -13,6 +14,7 @@ onMounted(() => {
   setTimeout(() => {state.showH1 = true}, 400);
   setTimeout(() => {state.showH2 = true}, 800);
   setTimeout(() => {state.showMain = false}, 2500);
+  setTimeout(() => {state.killMain = true}, 3505);
 });
 </script>
 
@@ -22,7 +24,8 @@ onMounted(() => {
     <!--Overlay with logo-->
     <div 
     class="h-full flex flex-col justify-center opacity-0 w-full duration-1000 bg-black items-center text-center px-x-standard"
-    :class="{'opacity-100': state.showMain}">
+    :class="{'opacity-100': state.showMain}"
+    v-if="!state.killMain">
       <div>
         <svg
         class="w-[190px] h-[190px] md:w-[300px] md:h-[300px] opacity-0 duration-1000"

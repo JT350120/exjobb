@@ -8,7 +8,7 @@ export default {
   ],
   theme: {
     screens: {
-      md: "768px",
+      md: "825px",
     },
     colors: {
       transparent: "transparent",
@@ -39,14 +39,14 @@ export default {
     },
     extend: {
       backgroundImage: {
-        'castle1': "url('/src/assets/backgrounds/castle_bk_1.webp')",
-        'castle2': "url('/src/assets/backgrounds/castle_bk_2.webp')",
-        'shore': "url('/src/assets/backgrounds/shoreline_bk.webp')",
-        'edward': "url('/src/assets/backgrounds/shears.webp')",
-        'truck': "url('/src/assets/backgrounds/truck.webp')",
-        '150_explore_img_village': "url('/src/assets/backgrounds/150_explore_img_village.webp')",
-        '150_presentation_portrait': "url('/src/assets/backgrounds/150_presentation_portrait.webp')",
-        '150_presentation_landscape': "url('/src/assets/backgrounds/150_presentation_landscape.webp')",
+        'castle1': "url('/src/assets/images/castle_bk_1.webp')",
+        'castle2': "url('/src/assets/images/castle_bk_2.webp')",
+        'shore': "url('/src/assets/images/shoreline_bk.webp')",
+        'edward': "url('/src/assets/images/shears.webp')",
+        'truck': "url('/src/assets/images/truck.webp')",
+        '150_explore_img_village': "url('/src/assets/images/150_explore_img_village.webp')",
+        '150_presentation_portrait': "url('/src/assets/images/150_presentation_portrait.webp')",
+        '150_presentation_landscape': "url('/src/assets/images/150_presentation_landscape.webp')",
     },
   },
   plugins: [],

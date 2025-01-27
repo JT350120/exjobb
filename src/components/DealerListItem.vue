@@ -33,7 +33,7 @@ function isActive(ind) {
         <li>{{ data.areaCode }}-{{ data.phone }}</li>
       </ul>
     </div>
-    <button class="w-[35px] h-[22px]" v-show="isActive(index)" @click="globalVariables.dealerRendering.active = null">
+    <button aria-label="Stäng enskild handlare och lista alla" class="w-[35px] h-[22px]" v-show="isActive(index)" @click="globalVariables.dealerRendering.active = null">
       <div class="bg-black w-[35px] h-[2px] mb-[8px] relative top-[10px] rotate-45 duration-200"></div>
       <div class="bg-black w-[35px] h-[2px] relative -rotate-45 duration-200"></div>
     </button>
