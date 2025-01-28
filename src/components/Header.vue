@@ -12,7 +12,7 @@ const globalVariables = useGlobalStore();
 
 <template>
   <header class="header px-x-standard py-y-standard items-center bg-tan border-black">
-    <button @click="globalVariables.show('hero')">
+    <button aria-label="Visa startsidan" @click="globalVariables.show('hero')">
       <svg
    class="hover:scale-105 duration-200"
    width="55px"
