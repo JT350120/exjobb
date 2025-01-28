@@ -267,14 +267,14 @@ export const useContentStore = defineStore("content", {
                 quoteBy: "Elizabeth Ager om Edwards död 1936",
                 paragraphs: [
                     "1899 konstruerade den walesiske bonden och geniet Edward David Ager världens första ångdrivna fårsax. När affärerna gick bättre behövde han ett fordon för att ta sig runt och sälja sina produkter, och den första lastbilen med namnet Peiriant byggdes 1902.",
-                    "Lastbilen blev snabbt populär och företaget utökade till att sälja personbilar. Peiriant Motor Company gjorde sig snabbt ett gott rykte som prisvärda bilar med finurliga lösningar och personlighet.",
+                    "Lastbilen blev snabbt populär och företaget utökade till att sälja personbilar. Peiriant Motor Cars gjorde sig snabbt ett gott rykte som prisvärda bilar med finurliga lösningar och personlighet.",
                     "Edwards fru Elizabeth lämnade honom efter allt resande, fåren rymde och drunknade och Edward dog på trottoaren utanför en bar i London, men anden lever alltjämt kvar över företaget än idag.",
                 ]
             },
 
         footer: {
             address: {
-                title: "Peiriant Motor Company",
+                title: "Peiriant Motor Cars",
                 street: "10 Shearer Street",
                 town: "Prenynysig",
                 county: "Mid Glamorgan",

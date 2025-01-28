@@ -63,7 +63,7 @@ onMounted(() => {
               inkscape:label="circle" /></g></g>
         </svg>
       </div>
-      <h1 class="text-lg md:text-xl font-bold tracking-wider opacity-0 duration-1000 text-yellow" :class="{'opacity-100': state.showH1}">Peiriant Motor Company</h1>
+      <h1 class="text-lg md:text-xl font-bold tracking-wider opacity-0 duration-1000 text-yellow" :class="{'opacity-100': state.showH1}">Peiriant Motor Cars</h1>
       <h2 class="text-md md:text-lg font-bold tracking-wider opacity-0 duration-1000 text-yellow" :class="{'opacity-100': state.showH2}">More than sheep shears</h2>
     </div>
   </div>
