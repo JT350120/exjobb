@@ -43,7 +43,7 @@ function top() {
         <div class="relative flex justify-center h-full w-full items-center">
           <InfoBox class="h-full w-full absolute top-0 border-2 border-black" v-if="globalVariables.infoBoxRendering.active != null" :model="index" />
         <!-- Had to hide the SVG here manually if mobile menu is open, z-index does not seem to affect it -->
-        <SVG150 class="mx-x-standard mt-y-standard h-auto max-w-full transform -scale-x-100"
+        <SVG150 class="mx-x-standard my-y-standard h-full transform -scale-x-100"
           v-show="!globalVariables.mainRendering.menu && globalVariables.infoBoxRendering.active === null"
           :color="content.models[index].choices.colors[2].hex" :wheels="content.models[index].choices.wheels[0].id" />
         </div>
