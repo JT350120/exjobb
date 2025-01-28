@@ -20,12 +20,12 @@
   <div class="flex flex-col">
     <Header />
     <div class="flex-grow flex">
-      <Menu v-show="globalVariables.mainRendering.menu" class="w-full" />
-      <Hero v-show="globalVariables.mainRendering.hero" class="w-full" />
-      <History v-show="globalVariables.mainRendering.history" class="w-full" />
+      <Menu v-if="globalVariables.mainRendering.menu" class="w-full" />
+      <Hero v-if="globalVariables.mainRendering.hero" class="w-full" />
+      <History v-if="globalVariables.mainRendering.history" class="w-full" />
       <Configurator v-if="globalVariables.mainRendering.configurator" class="w-full" />
-      <Dealers v-show="globalVariables.mainRendering.dealers" class="w-full" />
-      <Models v-show="globalVariables.mainRendering.models" class="w-full" />
+      <Dealers v-if="globalVariables.mainRendering.dealers" class="w-full" />
+      <Models v-if="globalVariables.mainRendering.models" class="w-full" />
       <Explore v-if="globalVariables.mainRendering.explore" class="w-full" />
     </div>
     <Footer v-show="!globalVariables.mainRendering.menu"/>

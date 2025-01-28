@@ -7,6 +7,11 @@ import InfoBox from './Infobox.vue';
 const globalVariables = useGlobalStore();
 const content = useContentStore();
 const index = globalVariables.configuration.chosenModel;
+
+function top() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
 
 <template>
@@ -47,10 +52,10 @@ const index = globalVariables.configuration.chosenModel;
           <button class="border-b-2 border-transparent text-right md:text-left w-auto hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.infoBoxRendering.active = index, globalVariables.infoBoxRendering.noneChosen = false, globalVariables.infoBoxRendering.specificationsMode = true">
             Tekniska data
           </button>
-          <button class="border-b-2 border-transparent text-right md:text-left w-auto hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('configurator'), globalVariables.configuration.chosenModel = index">
+          <button class="border-b-2 border-transparent text-right md:text-left w-auto hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('configurator', top()), globalVariables.configuration.chosenModel = index">
             Bygg din egen
           </button>
-          <button class="border-b-2 border-transparent text-right md:text-left w-auto hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('dealers')">
+          <button class="border-b-2 border-transparent text-right md:text-left w-auto hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap" @click="globalVariables.show('dealers'), top()">
             Hitta återförsäljare
           </button>
         </div>

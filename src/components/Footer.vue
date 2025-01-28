@@ -5,6 +5,11 @@ import { useGlobalStore } from '../stores/global';
 const globalVariables = useGlobalStore();
 const content = useContentStore();
 const address = content.footer.address;
+
+function top() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
 
 <template>
@@ -34,7 +39,7 @@ const address = content.footer.address;
       </div>
     </div>
     <div class="hidden md:inline">
-      <button @click="globalVariables.show('hero')">
+      <button tabindex="99" aria-label="Till startsidan" @click="globalVariables.show('hero'), top()">
         <svg class="hover:scale-105 duration-200" width="100px" height="100px" viewBox="0 0 215.77001 215.77001"
           version="1.1" id="svg1" xml:space="preserve" inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
           sodipodi:docname="logo.svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"

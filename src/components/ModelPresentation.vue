@@ -13,6 +13,11 @@ defineProps({
     required: true,
   },
 });
+
+function top() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
 
 <template>
@@ -66,11 +71,11 @@ defineProps({
         <div class="hidden md:flex justify-end mr-x-standard">
           <button
             class="border-b-2 border-transparent hover:border-black duration-200 text-md md:text-lg font-bold mx-x-standard"
-            @click="globalVariables.show('explore'), globalVariables.configuration.chosenModel = indexOfModel">
+            @click="globalVariables.show('explore'), globalVariables.configuration.chosenModel = indexOfModel, top()">
             Upptäck
           </button>
           <button class="border-b-2 border-transparent hover:border-black duration-200 text-md md:text-lg font-bold"
-            @click="globalVariables.show('configurator'), globalVariables.configuration.chosenModel = indexOfModel">
+            @click="globalVariables.show('configurator'), globalVariables.configuration.chosenModel = indexOfModel, top()">
             Bygg din egen
           </button>
         </div>

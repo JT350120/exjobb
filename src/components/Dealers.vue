@@ -14,6 +14,11 @@ const globalVariables = useGlobalStore();
 const dealers = computed(() => {
   return [...content.dealers].sort((a, b) => a.town.localeCompare(b.town));
 });
+
+function top() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
 
 <template>
@@ -119,9 +124,9 @@ const dealers = computed(() => {
               style="fill:#D1BE40;stroke:#000000;stroke-width:0.593;stroke-linecap:round;stroke-miterlimit:0"
               :id="dealer.town.toLowerCase()"
               :tabindex="index + 1"
-              @click="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
-              @keydown.enter="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
-              @keydown.space="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false"
+              @click="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false, top()"
+              @keydown.enter="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false, top()"
+              @keydown.space="globalVariables.dealerRendering.active = index, globalVariables.dealerRendering.noneChosen = false, top()"
               :cx="dealer.coordinates[0]"
               :cy="dealer.coordinates[1]"
               @mouseover="state.hoveredPin = index"
