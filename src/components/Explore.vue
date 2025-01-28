@@ -21,14 +21,13 @@ function top() {
       <div class="bg-white md:w-[50%] h-auto md:h-full flex flex-col justify-center items-center border-b-2 border-black md:border-r-2 px-x-standard py-y-standard">
         <h1 class="text-xl md:text-2xl font-bold px-x-standard text-center">{{ content.models[index].exploreHeadings[0] }}</h1>
       </div>
-      <div class="md:w-[50%] h-full px-x-standard py-y-standard bg-cover bg-150_explore_img_village bg-bottom  border-b-2 border-black">
+      <div class="md:w-[50%] h-full px-x-standard py-y-standard bg-cover bg-150_explore_1 bg-bottom border-b-2 border-black">
         
       </div>
     </section>
 
     <section class="w-full h-[82vh] flex flex-col-reverse md:flex-row bg-green">
-      <div class="md:w-[50%] h-full px-x-standard py-y-standard border-b-2 border-black md:border-r-2">
-        En till bild här
+      <div class="md:w-[50%] h-full bg-cover bg-150_explore_2 bg-right border-b-2 border-black md:border-r-2">
       </div>
       <div class="bg-white md:w-[50%] h-auto md:h-full flex flex-col justify-center items-center border-b-2 border-black px-x-standard py-y-standard">
         <h2 class="text-xl md:text-2xl font-bold px-x-standard text-center">{{ content.models[index].exploreHeadings[1] }}</h2>

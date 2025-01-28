@@ -21,7 +21,10 @@
     <Header />
     <div class="flex-grow flex">
       <Menu v-if="globalVariables.mainRendering.menu" class="w-full" />
-      <Hero v-if="globalVariables.mainRendering.hero" class="w-full" />
+
+      <!--Hero gets v-show instead of v-if so that the animation only runs the first time-->
+      <Hero v-show="globalVariables.mainRendering.hero" class="w-full" />
+      
       <History v-if="globalVariables.mainRendering.history" class="w-full" />
       <Configurator v-if="globalVariables.mainRendering.configurator" class="w-full" />
       <Dealers v-if="globalVariables.mainRendering.dealers" class="w-full" />
