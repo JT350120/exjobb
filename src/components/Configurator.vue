@@ -118,7 +118,7 @@ function saveBtnTimeout() {
 </script>
 
 <template>
-  <div class="flex flex-col max-w-full h-full md:flex-row md:h-[82vh] bg-white">
+  <div class="flex flex-col max-w-full h-full md:flex-row md:min-h-[82vh] bg-white">
     <section class="flex flex-col h-full md:w-full">
       <div>
         <div class="flex flex-row justify-between px-x-standard pt-y-standard">
