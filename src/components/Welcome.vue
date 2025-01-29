@@ -1,5 +1,7 @@
 <script setup>
 import { onMounted, reactive } from 'vue';
+import { useGlobalStore } from '../stores/global';
+const globalVariables = useGlobalStore();
 
 let state = reactive({ 
   showMain: true,
@@ -25,7 +27,7 @@ onMounted(() => {
     <div 
     class="h-full flex flex-col justify-center opacity-0 w-full duration-1000 bg-black items-center text-center px-x-standard"
     :class="{'opacity-100': state.showMain}"
-    v-if="!state.killMain">
+    v-if="!state.killMain, !globalVariables.mainRendering.menu">
       <div>
         <svg
         class="w-[190px] h-[190px] md:w-[300px] md:h-[300px] opacity-0 duration-1000"
