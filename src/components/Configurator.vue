@@ -160,11 +160,11 @@ function saveBtnTimeout() {
       <div class="flex flex-col self-end md:self-auto md:flex-row mx-x-standard my-y-standard md:justify-between">
         <div class="flex flex-col md:flex-row w-full">
           <button v-if="!globalVariables.mainRendering.menu"
-            class="relative border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold mr-x-standard md:mb-0 whitespace-nowrap"
+            class="relative border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold md:mr-x-standard md:mb-0 whitespace-nowrap"
             @click="configStorage(configuration), saveBtn.showSaved = true, saveBtnTimeout()">
             Spara bil
-            <span class="absolute left-0 bottom-0 opacity-0 transform transition-all duration-200"
-              :class="{ 'opacity-100 bottom-[33px]': saveBtn.showSaved }">
+            <span class="absolute right-0 md:left-0 bottom-0 opacity-0 transform transition-all duration-200"
+              :class="{ 'opacity-100 bottom-[25px] md:bottom-[33px]': saveBtn.showSaved }">
               Sparad
             </span>
           </button>
