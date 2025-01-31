@@ -4,9 +4,9 @@
 
 ### Short description
 
-My degree project is inspired by car brand websites where the user can customize their own car, choosing colors, engines and other options. The entire application is a single html-page where different content is loaded through conditional rendering in Vue. 
+My degree project is inspired by car brand websites where the user can customize their own car by choosing colors, engines and other options. The entire application is a single html-page where different content is loaded through conditional rendering in Vue. 
 
-In the App.vue file template-tag I have added the header first, the footer last, and in between the different main components to “navigate” to, or actually show/hide, using the buttons in the header menu and elsewhere through the application. The configurator is a JavaScript app using two Pinia stores, content.js and global.js, one to get the different options and one to store the chosen options. The car is an SVG that is styled according to the user set variables.
+The configurator is a JavaScript app using two Pinia stores, content.js and global.js, one to get the different options and one to store the chosen options. The car is an SVG that is styled according to the user set variables.
 
 ### Tech stack
 
@@ -26,6 +26,8 @@ In the App.vue file template-tag I have added the header first, the footer last,
 - Google Fonts
 
 ### Technical breakdown
+
+In the App.vue file template-tag I have added the header first, the footer last, and in between the different main components to “navigate” to, or actually show/hide, using the buttons in the header menu and elsewhere through the application. 
 
 #### Pinia stores
 To have one easy source of truth accessible in each component, the rendering status mentioned above is stored in the Pinia store called “globalVariables”. The current configuration options and index of chosen model are other examples of variables stored here.
