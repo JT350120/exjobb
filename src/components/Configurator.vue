@@ -119,7 +119,7 @@ function saveBtnTimeout() {
 
 <template>
   <div class="flex flex-col max-w-full h-full md:flex-row md:min-h-[82vh] bg-white">
-    <section class="flex flex-col h-full md:w-full">
+    <section class="flex flex-col h-full md:h-[82vh] md:w-full">
       <div>
         <div class="flex flex-row justify-between px-x-standard pt-y-standard">
           <h1 class="text-xl md:text-2xl font-bold">Din {{ configuration.modelName }} </h1>
