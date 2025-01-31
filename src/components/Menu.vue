@@ -10,12 +10,14 @@ function top() {
 </script>
 
 <template>
-  <nav class="md:hidden z-999 top-[80px] absolute h-full text-lg w-full flex flex-col justify-evenly items-center border-b-2 border-black bg-white">
+  <nav
+    class="md:hidden z-999 top-[80px] absolute h-full text-lg w-full flex flex-col justify-evenly items-center border-b-2 border-black bg-white">
     <div class="mb-y-standard">
       <button @click="globalVariables.show('models'), top()">Modeller</button>
     </div>
     <div class="mb-y-standard">
-      <button @click="globalVariables.show('configurator'), globalVariables.props.model = null, top()">Bygg din bil</button>
+      <button @click="globalVariables.show('configurator'), globalVariables.props.model = null, top()">Bygg din
+        bil</button>
     </div>
     <div class="mb-y-standard">
       <button @click="globalVariables.show('dealers'), top()">Återförsäljare</button>
@@ -26,5 +28,4 @@ function top() {
   </nav>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

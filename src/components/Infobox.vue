@@ -37,7 +37,8 @@ const model = props.model;
     </div>
 
     <!--If the InfoBox is showing general car specifications-->
-    <div v-if="globalVariables.infoBoxRendering.specificationsMode" class="flex flex-col justify-evenly h-full mt-y-standard md:mt-0">
+    <div v-if="globalVariables.infoBoxRendering.specificationsMode"
+      class="flex flex-col justify-evenly h-full mt-y-standard md:mt-0">
       <h2 class="text-lg md:text-xl font-bold border-b-2 border-black">Tekniska data</h2>
       <div class="flex justify-between border-b-2 py-[8px]">
         <h3 class="text-md md:text-lg font-bold">Mått<span class="text-sm md:text-md font-normal"> (mm)</span></h3>
