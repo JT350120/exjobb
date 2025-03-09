@@ -77,7 +77,7 @@ console.log(globalVariables.svgStates.configuration)
 <template>
   <div>
 
-    <svg width="100%" height="100%" viewBox="0 0 104.95582 80.817055" id="svg1" xml:space="preserve"
+    <svg width="100%" height="92%" viewBox="0 0 104.95582 80.817055" id="svg1" xml:space="preserve"
       sodipodi:docname="150.svg" inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
       xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
       xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
