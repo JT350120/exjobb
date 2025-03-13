@@ -160,16 +160,16 @@ function saveBtnTimeout() {
       <div class="flex flex-col self-end md:self-auto md:flex-row mx-x-standard my-y-standard md:justify-between">
         <div class="flex flex-col md:flex-row w-full">
           <button v-if="!globalVariables.mainRendering.menu"
-            class="relative border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold md:mr-x-standard md:mb-0 whitespace-nowrap"
+            class="relative border-b-2 border-transparent hover:border-black duration-200 text-right md:mt-[-14px] md:text-center text-md md:text-lg font-bold md:mr-x-standard md:mb-0 whitespace-nowrap"
             @click="configStorage(configuration), saveBtn.showSaved = true, saveBtnTimeout()">
             Spara bil
-            <span class="absolute right-0 md:left-0 bottom-0 opacity-0 transform transition-all duration-200"
+            <span class="absolute right-0 md:left-0 bottom-0 opacity-0 transform transition-all duration-200 md:mt-[-14px]"
               :class="{ 'opacity-100 bottom-[25px] md:bottom-[33px]': saveBtn.showSaved }">
               Sparad
             </span>
           </button>
           <button
-            class="border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center text-md md:text-lg font-bold md:mb-0 whitespace-nowrap"
+            class="border-b-2 border-transparent hover:border-black duration-200 text-right md:text-center md:mt-[-14px] text-md md:text-lg font-bold md:mb-0 whitespace-nowrap"
             @click="configStorage('get')">
             Ladda sparad bil
           </button>
@@ -177,7 +177,7 @@ function saveBtnTimeout() {
 
         <div class="flex">
           <button
-            class="border-b-2 border-transparent hover:border-black duration-200 text-md md:text-lg font-bold whitespace-nowrap"
+            class="border-b-2 border-transparent hover:border-black duration-200 text-md md:text-lg md:mt-[-14px] font-bold whitespace-nowrap"
             @click="globalVariables.show('dealers'), top()">
             Hitta återförsäljare
           </button>
@@ -188,7 +188,7 @@ function saveBtnTimeout() {
     </section>
 
     <section
-      class="bg-white h-full md:h-[82vh] overflow-scroll md:w-[40vw] md:mr-x-standard border-t-2 md:border-t-0 md:border-x-2 border-black">
+      class="bg-white h-full md:h-[82vh] overflow-y-scroll md:w-[40vw] md:mr-x-standard border-t-2 md:border-t-0 md:border-x-2 border-black">
       <!-- Render a button for car models -->
       <div class="menuItem border-b-2 h-auto border-black flex flex-col">
         <button @click="toggleCategory('model')"
